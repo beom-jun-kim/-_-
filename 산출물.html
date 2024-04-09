@@ -93,9 +93,6 @@
     }
     .final_result_data tbody tr td:nth-child(2) {
       text-align: left;
-      padding-left: 3px;
-      display: flex;
-      align-items: center;
     }
     .journal_search_btn {
       background: #f6fbff;
@@ -105,6 +102,9 @@
     .final_result_data input[type="date"] {
       padding: 3px;
       border: 1px solid #eee;
+    }
+    .final_result_svg {
+        transform: translate(3px,5px);
     }
   </style>
   <body>
@@ -168,6 +168,7 @@
                 height="20px"
                 viewBox="-8 0 32 32"
                 version="1.1"
+                class="final_result_svg"
               >
                 <title>paper</title>
                 <path
