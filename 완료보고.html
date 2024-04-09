@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    #result_report {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .proc_bar {
+      margin-top: 100px;
+    }
+
+    .proc_bar_box {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 3px solid #258ba4;
+    }
+
+    .proc_bar_box li {
+      padding: 10px 20px;
+      border: 1px solid #eee;
+      text-align: center;
+      width: 16%;
+      border-bottom: none;
+    }
+    .journal_tabel {
+      width: 100%;
+    }
+    .journal_tabel tbody tr {
+      height: 50px;
+      display: flex;
+    }
+    .journal_tabel tbody tr td {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .journal_tabel thead th,
+    .journal_tabel tbody tr td {
+      border: 1px solid #eee;
+    }
+    .journal_tabel tbody tr td input {
+      padding: 7px;
+      width: 95%;
+    }
+    .journal_tabel tbody tr td:nth-child(odd) {
+      background: #f6fbff;
+      flex: 2;
+    }
+
+    .journal_tabel tbody tr td:nth-child(even) {
+      flex: 8;
+    }
+    .result_report_table {
+        width: 100%;
+    }
+    .result_report_table tr {
+        height: 50px;
+    }
+    .result_report_table tr:nth-child(n+4) {
+        height: 100px;
+    }
+    .result_report_table tr td {
+        border: 1px solid #eee;
+        padding-left: 5px;
+    }
+    .result_report_table tr td:first-child {
+        background: #f6fbff;
+        width: 30%;
+    }
+    .result_report_table tr td:nth-child(n+2) {
+        width: 20px;
+    }
+    .result_report_table .result_report_textarea {
+        width: 98%;
+        border: 1px solid #eee;
+        height: 50px;
+        resize: none;
+        overflow-y: scroll;
+    }
+    .result_report_table .required_start {
+        color: rgb(207, 0, 0);
+        margin: 0 5px 0 0;
+        vertical-align: middle;
+    }
+    .result_report_table .text_count {
+        height: 20px;
+        background: #f0f0f0;
+        margin-bottom: 5px;
+    }
+  </style>
+  <body>
+    <section id="result_report">
+      <div class="proc_bar">
+        <ul class="proc_bar_box">
+          <li>컨설팅 기본정보</li>
+          <li>수행계획</li>
+          <li>업무일지</li>
+          <li style="background: #258ba4; color: #fff">완료보고</li>
+          <li>산출물</li>
+        </ul>
+      </div>
+      <table class="journal_tabel">
+        <tbody>
+          <tr>
+            <td>컨설팅 부문</td>
+            <td>
+              <input type="text" disabled value="Value-Up" />
+            </td>
+            <td>수행 컨설턴트</td>
+            <td>
+              <input type="text" disabled />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="journal_tabel">
+        <tbody>
+          <tr>
+            <td>담당 PM</td>
+            <td>
+              <input type="text" disabled value="강병진" />
+            </td>
+            <td>진행상태</td>
+            <td>
+              <input type="text" disabled value="완료보고중" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="result_report_wrap">
+        <div class="result_report_title">
+          <h3>완료보고</h3>
+        </div>
+        <table class="result_report_table">
+            <tr>
+                <td>핵심 KPI</td>
+                <td>경영전략</td>
+                <td>성장사업매출액증가율</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>핵심 KPI</td>
+                <td>재무/회계</td>
+                <td>시장점유율</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>핵심 KPI</td>
+                <td>마케팅</td>
+                <td>브랜드인지도</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><span class="required_start">*</span>수진기업의 컨설팅 신청배경</td>
+                <td colspan="3">
+                    <div class="text_count"></div>
+                    <textarea class="result_report_textarea">
+                        해저 탐사, 수중 시설물 점검, 해양플랜트 공사 등을 통해 사업성과를 창출하고 있으며 축적된 기술과 노하우를 기반으로 해상풍력 O&M 시장을 사업으로 추진하고자 투자유치 및 기술사업화 필요
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="required_start">*</span>수진기업의 컨설팅 당면과제 및 문제점 (신청당시)</td>
+                <td colspan="3">
+                    <div class="text_count"></div>
+                    <textarea class="result_report_textarea">
+                        1. 신규사업인 해상풍력 발전 O&M 사업 수행을 위한 자금조달 계획의 미완성2. 해상풍력 발전 O&M 설비 및 서비스 운영에 관한 기술개발 고도화 전략 부재3. 투자유치를 위한 기업 가치 제고 방안 부재
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="required_start">*</span>주요 issue에 대한 논의사항</td>
+                <td colspan="3">
+                    <div class="text_count"></div>
+                    <textarea class="result_report_textarea">
+                        투자유치를 위한 IR 지료의 내용 및 비즈니스 로드맵 수립에 필요한 사업 목표 및 사업 운영 전략에 대하여 논의하고 단기/중기 로드맵을 수립하여 반영- 시리즈 A의 투자유치 규모를 고려
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="required_start">*</span>컨설팅 실행결과(결과물, 제도도입, 개선내용 등)</td>
+                <td colspan="3">
+                    <div class="text_count"></div>
+                    <textarea class="result_report_textarea">
+                        딥테크 TIPS에 대한 사업내용을 소개하고 참여를 위해 필요한 기술성, 사업성, 성장가능성, 글로벌 사업 실적과 관련하여 세부 내용 기재 방안을 설명하였으며, 민간운영사와 네트워킹 제안
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="required_start">*</span>향후 수진기업이 추진해야 할 사항(부문별)</td>
+                <td colspan="3">
+                    <div class="text_count"></div>
+                    <textarea class="result_report_textarea">
+                        경영전략(성장사업매출액 증가율) : 해상풍력발전 O&M 사업에서의 실현 가능성 제고와 가시적 성과 창출을 위해 타깃고객을 선정하고 POC를 추진한 다음 고객군별로 영업/마케팅 역량을 강화
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="required_start">*</span>기대효과</td>
+                <td colspan="3">
+                    <div class="text_count"></div>
+                    <textarea class="result_report_textarea">
+                        IR 자료 고도화를 통해 투자유치 역량을 강화함으로서 기업의 자금조달 가능성 제고,팁테크 TIPS 사업 참여 가능성을 높여 기술개발 역량 강화와 사업실현 가능성 제고
+                    </textarea>
+                </td>
+            </tr>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
