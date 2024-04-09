@@ -1,0 +1,215 @@
+.search_box {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 950px;
+}
+.search_box .cl:first-child{border-top:1px solid #ddd}
+.search_box .cl {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border: 1px solid #ddd;
+    z-index: 9;
+    overflow: hidden;
+    border-top: 0px;
+}
+
+.search_box .cl p {
+    margin: 0px;
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+    width: 120px;
+    text-align: center;
+    background: #f6fbff;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+    z-index: 0;
+    position: relative;
+    width: 110px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.search_box .cl > div {
+    display: flex;
+    padding: .5rem 2rem;
+    background: #fff;
+    width: auto;
+}
+.search_box .cl > div select{
+    width: 100%;
+    padding: .5rem 2rem;
+    border: 1px solid #ddd;
+    margin-right: 6px;
+}
+
+.search_box .cl div input {
+    padding: 0.25rem;
+    border: 1px solid #ddd;
+}
+
+.search_box .cl div small {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.search_box .cl div .btn_grl {
+    display: flex;
+    align-items: center;
+}
+
+.search_box .cl div .btn_grl div {
+    margin-left: 12px;
+    border: 1px solid rgb(215, 215, 215);
+    padding: 0.75rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.search_box .cl div .btn_grl div select {
+}
+
+.search_box .cl div .btn_grl .btn_active {
+    color: rgb(255, 255, 255);
+    background: rgb(4 125 150);
+}
+
+.pj_table {
+}
+
+.pj_table .cl_fr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pj_table .cl_fr p {
+}
+
+.pj_table .cl_fr small {
+}
+
+.pj_table .cl_fr small {
+}
+
+.pj_table .pj_table_hd {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+.pj_table .pj_table_hd div {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: rgb(246 251 255);
+    width: 20%;
+    border-right: 1px solid #ddd;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pj_table .pj_table_hd div:last-child {
+    border-right: 0px
+}
+
+.pj_table .pj_table_wrap {
+}
+
+.pj_table .pj_table_wrap .pj_content {
+}
+
+.pj_table .pj_table_wrap .pj_content div {
+}
+
+.pj_table .pj_table_wrap .pj_content div .button_pj {
+}
+
+.pj_table .pj_content_wrap {
+}
+
+.pj_table .pj_content_wrap .pj_content {
+    display: flex;
+}
+
+.pj_table .pj_content_wrap .pj_content > div {
+    display: flex;
+    padding: 1rem;
+    width: 20%;
+    border-width: 0px 0px 1px 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: ddd;
+    border-bottom-color: #ddd;
+    border-left-color: #ddd;
+    border-image: initial;
+    border-right-style: initial;
+    border-right-color: initial;
+}
+
+.pj_table .pj_content_wrap .pj_content > div:first-child {
+    border-left: 0px;
+}
+
+.pj_table .pj_content_wrap .pj_content div .button_pj {
+    text-align: center;
+    width: 50%;
+    margin: 0px auto;
+    border: 1px solid #666;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.pj_table .pj_pagenation_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pj_table .pj_pagenation_wrap .first {
+}
+
+.pj_table .pj_pagenation_wrap .prev {
+}
+
+.pj_table .pj_pagenation_wrap .page_active {
+    background: #115981;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.pj_table .pj_pagenation_wrap .next {
+}
+
+.pj_table .pj_pagenation_wrap .last {
+}
+
+.pj_table .pj_pagenation_wrap div {
+    padding: 0.75rem;
+    cursor: pointer;
+}
+
+.pj_table .pj_pagenation_wrap p {
+    padding: 0.75rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn_search{
+    padding: .5rem 2rem;
+    background: #333;
+    display: inline-block;
+    color: #fff;
+    margin-left: auto;
+    display: block;
+    width: 2rem;
+    text-align: center;
+    margin: 1rem 0 1rem auto;
+}
