@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    #final_result {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .proc_bar {
+      margin-top: 100px;
+    }
+
+    .proc_bar_box {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 3px solid #258ba4;
+    }
+
+    .proc_bar_box li {
+      padding: 10px 20px;
+      border: 1px solid #eee;
+      text-align: center;
+      width: 16%;
+      border-bottom: none;
+    }
+    .journal_tabel {
+      width: 100%;
+    }
+    .journal_tabel tbody tr {
+      height: 50px;
+      display: flex;
+    }
+    .journal_tabel tbody tr td {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .journal_tabel thead th,
+    .journal_tabel tbody tr td {
+      border: 1px solid #eee;
+    }
+    .journal_tabel tbody tr td input {
+      padding: 7px;
+      width: 95%;
+    }
+    .journal_tabel tbody tr td:nth-child(odd) {
+      background: #f6fbff;
+      flex: 2;
+    }
+
+    .journal_tabel tbody tr td:nth-child(even) {
+      flex: 8;
+    }
+
+    .final_result_data {
+      width: 100%;
+    }
+
+    .final_result_data thead th {
+      background: #f6fbff;
+      border: 1px solid #eee;
+      padding: 10px 8px;
+    }
+    .final_result_data tbody tr td {
+      border: 1px solid #eee;
+      text-align: center;
+      height: 45px;
+    }
+    .final_result_data tbody tr td:nth-child(2) {
+      text-align: left;
+      padding-left: 3px;
+      display: flex;
+      align-items: center;
+    }
+    .journal_search_btn {
+      background: #f6fbff;
+      border: 1px solid #258ba4;
+      padding: 3px 5px;
+    }
+    .final_result_data input[type="date"] {
+      padding: 3px;
+      border: 1px solid #eee;
+    }
+  </style>
+  <body>
+    <section id="final_result">
+      <div class="proc_bar">
+        <ul class="proc_bar_box">
+          <li>컨설팅 기본정보</li>
+          <li>수행계획</li>
+          <li>업무일지</li>
+          <li>완료보고</li>
+          <li style="background: #258ba4; color: #fff">산출물</li>
+        </ul>
+      </div>
+      <table class="journal_tabel">
+        <tbody>
+          <tr>
+            <td>컨설팅 부문</td>
+            <td>
+              <input type="text" disabled value="Value-Up" />
+            </td>
+            <td>수행 컨설턴트</td>
+            <td>
+              <input type="text" disabled />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="journal_tabel">
+        <tbody>
+          <tr>
+            <td>담당 PM</td>
+            <td>
+              <input type="text" disabled value="강병진" />
+            </td>
+            <td>진행상태</td>
+            <td>
+              <input type="text" disabled value="완료보고중" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="final_result_data">
+        <div class="final_result_title">
+          <h3>산출물</h3>
+        </div>
+        <table class="final_result_data" style="border-collapse: collapse">
+          <thead>
+            <th style="width: 8%">순번</th>
+            <th>수행활동</th>
+            <th style="width: 25%">실제수행일</th>
+            <th style="width: 25%">등록자 ID</th>
+          </thead>
+          <tbody>
+            <td>1</td>
+            <td>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#111"
+                width="20px"
+                height="20px"
+                viewBox="-8 0 32 32"
+                version="1.1"
+              >
+                <title>paper</title>
+                <path
+                  d="M13.52 5.72h-7.4c-0.36 0-0.56 0.2-0.6 0.24l-5.28 5.28c-0.040 0.040-0.24 0.24-0.24 0.56v12.2c0 1.24 1 2.24 2.24 2.24h11.24c1.24 0 2.24-1 2.24-2.24v-16.040c0.040-1.24-0.96-2.24-2.2-2.24zM5.28 8.56v1.8c0 0.32-0.24 0.56-0.56 0.56h-1.84l2.4-2.36zM14.080 24.040c0 0.32-0.28 0.56-0.56 0.56h-11.28c-0.32 0-0.56-0.28-0.56-0.56v-11.36h3.040c1.24 0 2.24-1 2.24-2.24v-3.040h6.52c0.32 0 0.56 0.24 0.56 0.56l0.040 16.080z"
+                />
+              </svg>
+              <a href="" download="컨설팅수행일지_로보스텍1차_24.02.06.hwp">컨설팅수행일지_로보스텍1차_24.02.06.hwp</a>
+            </td>
+            <td>20240226</td>
+            <td>sb101</td>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
