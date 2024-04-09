@@ -1,10 +1,112 @@
-.search_box {
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+#final_result {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.proc_bar {
+  margin-top: 100px;
+}
+
+.proc_bar_box {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid #258ba4;
+}
+
+.proc_bar_box li {
+  padding: 10px 20px;
+  border: 1px solid #eee;
+  text-align: center;
+  width: 16%;
+  border-bottom: none;
+}
+.journal_tabel {
+  width: 100%;
+}
+.journal_tabel tbody tr {
+  height: 50px;
+  display: flex;
+}
+.journal_tabel tbody tr td {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.journal_tabel thead th,
+.journal_tabel tbody tr td {
+  border: 1px solid #eee;
+}
+.journal_tabel tbody tr td input {
+  padding: 7px;
+  width: 95%;
+}
+.journal_tabel tbody tr td:nth-child(odd) {
+  background: #f6fbff;
+  flex: 2;
+}
+
+.journal_tabel tbody tr td:nth-child(even) {
+  flex: 8;
+}
+
+.final_result_data {
+  width: 100%;
+}
+
+.final_result_data thead th {
+  background: #f6fbff;
+  border: 1px solid #eee;
+  padding: 10px 8px;
+}
+.final_result_data tbody tr td {
+  border: 1px solid #eee;
+  text-align: center;
+  height: 45px;
+}
+.final_result_data tbody tr td:nth-child(2) {
+  text-align: left;
+  padding-left: 3px;
+  display: flex;
+  align-items: center;
+}
+.journal_search_btn {
+  background: #f6fbff;
+  border: 1px solid #258ba4;
+  padding: 3px 5px;
+}
+.final_result_data input[type="date"] {
+  padding: 3px;
+  border: 1px solid #eee;
+}
+
+.sr_box {
     display: flex;
     flex-wrap: wrap;
     max-width: 950px;
 }
-.search_box .cl:first-child{border-top:1px solid #ddd}
-.search_box .cl {
+.sr_box .cl:first-child{border-top:1px solid #ddd}
+.sr_box .cl {
     display: flex;
     width: 100%;
     align-items: center;
@@ -14,7 +116,7 @@
     border-top: 0px;
 }
 
-.search_box .cl p {
+.sr_box .cl p {
     margin: 0px;
     padding: 0.5rem 2rem;
     white-space: nowrap;
@@ -33,36 +135,36 @@
     border-left: 1px solid #ddd;
 }
 
-.search_box .cl > div {
+.sr_box .cl > div {
     display: flex;
     padding: .5rem 2rem;
     background: #fff;
     width: auto;
 }
-.search_box .cl > div select{
+.sr_box .cl > div select{
     width: 100%;
     padding: .5rem 2rem;
     border: 1px solid #ddd;
     margin-right: 6px;
 }
 
-.search_box .cl div input {
+.sr_box .cl div input {
     padding: 0.25rem;
     border: 1px solid #ddd;
 }
 
-.search_box .cl div small {
+.sr_box .cl div small {
     display: flex;
     align-items: center;
     padding: 0.5rem;
 }
 
-.search_box .cl div .btn_grl {
+.sr_box .cl div .btn_grl {
     display: flex;
     align-items: center;
 }
 
-.search_box .cl div .btn_grl div {
+.sr_box .cl div .btn_grl div {
     margin-left: 12px;
     border: 1px solid rgb(215, 215, 215);
     padding: 0.75rem;
@@ -70,10 +172,10 @@
     cursor: pointer;
 }
 
-.search_box .cl div .btn_grl div select {
+.sr_box .cl div .btn_grl div select {
 }
 
-.search_box .cl div .btn_grl .btn_active {
+.sr_box .cl div .btn_grl .btn_active {
     color: rgb(255, 255, 255);
     background: rgb(4 125 150);
 }
@@ -213,3 +315,13 @@
     text-align: center;
     margin: 1rem 0 1rem auto;
 }
+
+.mentor_info_wrap{}
+.mentor_info_wrap .mi_container{display: flex;flex-wrap: wrap;}
+.mentor_info_wrap .mi_container .mi_content{
+    display: flex;
+    width: 50%;
+}
+.mentor_info_wrap .mi_container .mi_content p{}
+.mentor_info_wrap .mi_container .mi_content div{}
+.mentor_info_wrap .mi_container .mi_content div input{}
