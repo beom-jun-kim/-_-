@@ -110,7 +110,7 @@ table {
     /* max-width: 950px; */
     border-bottom: 1px solid #ddd;
 }
-.sr_box > textarea{border: 1px solid #ddd;width: 100%;padding: 1rem;}
+.sr_box > textarea{border: 1px solid #ddd;width: 100%;padding: 1rem;resize: none;}
 .sr_box .cl:first-child{/* border-top:1px solid #ddd; */}
 .sr_box .cl {
     display: flex;
@@ -163,7 +163,7 @@ table {
 }
 
 .sr_box .cl > .fl_nw{flex-wrap: nowrap;}
-.fl_nw{display: flex;flex-wrap: nowrap;}
+.fl_nw{display: flex;flex-wrap: nowrap;align-items: center;}
 
 .sr_box .cl > div textarea{width: 100%;margin-top: 1rem;border-color: #ddd;resize: none;}
 .sr_box .cl > .em{display: flex; align-items: center;}
@@ -278,7 +278,7 @@ table {
 .pj_table .pj_content_wrap .pj_content {
     display: flex;
 }
-
+.pj_table .pj_content_wrap .pj_content .ip2{flex-wrap: nowrap;}
 .pj_table .pj_content_wrap .pj_content > div {
     padding: .5rem 1rem;
     width: 20%;
@@ -296,6 +296,7 @@ table {
     border-right-color: initial;
     font-size: 0.925rem;
     text-align: center;
+    flex-wrap: wrap;
     white-space: break-spaces;
 }
 
@@ -307,7 +308,7 @@ table {
 
 .pj_table .pj_content_wrap .pj_content div .button_pj {
     text-align: center;
-    width: 50%;
+    width: 100%;
     margin: 0px auto;
     border: 1px solid #666;
     padding: 0.25rem 0.5rem;
@@ -396,6 +397,8 @@ table {
 
 .acodian_01 .sr_title{margin-top: 2rem;font-size: 1.125rem;padding: 1rem;font-weight: 700;cursor: pointer;display: flex;justify-content: space-between;align-items: center;border-bottom: 3px solid #0f5b81; color: #0f5b81;}
 .acodian_01 .sr_title p{margin: 0;}
+
+.sr_active_dn .sr_title p{transform:rotate(180deg)}
 
 .sr_active_dn .sr_title{margin-top: 2rem;font-size: 1.125rem;padding: 1rem;font-weight: 700;cursor: pointer;display: flex;justify-content: space-between;align-items: center;border-bottom: 3px solid #ddd !important;color: #666;}
 .sr_active_dn .sr_box{display: none;}
