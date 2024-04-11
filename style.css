@@ -128,6 +128,12 @@ table {
 .sr_box .cl100{width: 100%;}
 .sr_box .cl100 > div{width: 90% !important;}
 .sr_box .cl100 > div input{max-width: 100% !important;}
+.sr_box .cl .required:before {content: "*";
+    display: inline-block;
+    font-size: .8rem;
+    color: #c32929;
+    padding-right: 4px;
+}
 .sr_box .cl p {
     margin: 0px;
     padding: 0.5rem 2rem;
@@ -185,6 +191,7 @@ table {
     box-sizing: border-box;
 }
 
+.sr_box .cl div .readonly{background: #eaeaea;}
 .sr_box .cl00 div{width: 80%;}
 .sr_box .cl00 div input{width: 100%;max-width: none;}
 
@@ -386,8 +393,13 @@ table {
 .pj_table .pj_content_wrap .pj_content > .tw10{width: 10%;}
 
 .acodian_01{}
-.acodian_01 .sr_title{margin-top: 2rem;font-size: 1.125rem;padding: 1rem;font-weight: 700;cursor: pointer;display: flex;justify-content: space-between;align-items: center;border-bottom: 3px solid #ddd;}
+
+.acodian_01 .sr_title{margin-top: 2rem;font-size: 1.125rem;padding: 1rem;font-weight: 700;cursor: pointer;display: flex;justify-content: space-between;align-items: center;border-bottom: 3px solid #0f5b81; color: #0f5b81;}
 .acodian_01 .sr_title p{margin: 0;}
+
+.sr_active_dn .sr_title{margin-top: 2rem;font-size: 1.125rem;padding: 1rem;font-weight: 700;cursor: pointer;display: flex;justify-content: space-between;align-items: center;border-bottom: 3px solid #ddd !important;color: #666;}
+.sr_active_dn .sr_box{display: none;}
+
 
 #spwrapc{display: flex;flex-wrap: wrap;padding: 0;}
 #spwrapc > div{width: 100%;margin: 0;padding: 0;display: flex;align-items: center;border-bottom: 1px solid #ddd;z-index: 9;}
