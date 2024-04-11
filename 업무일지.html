@@ -122,7 +122,6 @@
 
     #jouranl_search_modal {
       width: 850px;
-      height: 550px;
       background: #fff;
       position: absolute;
       top: 50%;
@@ -131,13 +130,20 @@
       display: block;
     }
     #jouranl_search_modal.active {
-      display: none;
+      display: block;
     }
     .jouranl_search_title {
       background: #115d81;
-      padding: 15px;
+      padding: 8px 17px;
       color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+    .jouranl_search_title span {
+      cursor: pointer;
+    }
+
     .jouranl_search_title p {
       margin: 0;
     }
@@ -271,6 +277,23 @@
       border: 1px solid #dbdbdb;
       cursor: pointer;
     }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    .overlay.active {
+      display: block;
+    }
+    #image_preview {
+      display: none;
+      max-width: 500px;
+      max-height: 500px;
+    }
   </style>
   <body>
     <section id="proc_bar_section">
@@ -361,9 +384,27 @@
       </div>
     </section>
 
+    <div class="overlay"></div>
     <div id="jouranl_search_modal">
       <div class="jouranl_search_title">
         <p>업무일지 작성</p>
+        <span class="jouranl_search_modal_delete_btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M16 8L8 16M8.00001 8L16 16"
+              stroke="#ffffff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
       </div>
       <div class="jouranl_search_content">
         <select id="jouranl_search_select">
@@ -587,7 +628,19 @@
               </tr>
               <tr class="jouranl_search_modal_write_table_detail">
                 <td>관련사진</td>
-                <td colspan="3"></td>
+                <td colspan="3">
+                  <input
+                    type="file"
+                    id="related_photo"
+                    name="related_photo"
+                    accept="image/*"
+                  />
+                  <img
+                    id="image_preview"
+                    src="#"
+                    alt="Image Preview"
+                  />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -609,6 +662,22 @@
   </body>
 
   <script>
+    // 모달창 닫기 및 열기
+    const jouranlSearchModalDeleteBtn = document.querySelector(
+      ".jouranl_search_modal_delete_btn"
+    );
+    const jouranlSearchModal = document.getElementById("jouranl_search_modal");
+    const journalSearchBtn = document.querySelector(".journal_search_btn");
+    const overlay = document.querySelector(".overlay");
+    jouranlSearchModalDeleteBtn.addEventListener("click", function () {
+      jouranlSearchModal.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+    journalSearchBtn.addEventListener("click", function () {
+      jouranlSearchModal.classList.add("active");
+      overlay.classList.add("active");
+    });
+
     // 제출 방식에 따라 화면 전환
     const submitSelect = document.getElementById("jouranl_search_select");
 
@@ -617,8 +686,8 @@
       ".jouranl_search_modal_write_wrap"
     );
 
-    fileWrap.style.display = "block";
-    writeWrap.style.display = "none";
+    fileWrap.style.display = "none";
+    writeWrap.style.display = "block";
 
     submitSelect.addEventListener("change", function () {
       const selectOption = submitSelect.value;
@@ -659,24 +728,36 @@
       });
     }
 
-
     // 업로드 파일 삭제
     const uploadDeleteBtn = document.querySelector(".file_delete_button");
-    const uploadNameInput = document.querySelector('.upload-name');
-    const fileBox = document.querySelector('.file');
+    const uploadNameInput = document.querySelector(".upload-name");
+    const fileBox = document.querySelector(".file");
 
-    uploadDeleteBtn.addEventListener('click',function(){
-      if(uploadNameInput.value){
-        if(confirm("업로드한 파일을 삭제하시겠습니까?")){
-          fileBox.value ='';
-          uploadNameInput.value ='';
+    uploadDeleteBtn.addEventListener("click", function () {
+      if (uploadNameInput.value) {
+        if (confirm("업로드한 파일을 삭제하시겠습니까?")) {
+          fileBox.value = "";
+          uploadNameInput.value = "";
         } else {
           return;
-        };
+        }
       } else {
         alert("업로드된 파일이 없습니다");
       }
     });
 
+    // 관련사진란 이미지 업로드
+    const relatedPhoto = document.getElementById('related_photo');
+    relatedPhoto.addEventListener("change", function(){
+      const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("image_preview").src = e.target.result;
+            document.getElementById("image_preview").style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        }
+    })
   </script>
 </html>
