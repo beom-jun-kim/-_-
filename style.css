@@ -1,9 +1,11 @@
 
+*{box-sizing:border-box;word-break: keep-all;}
 html,
 body {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 ul {
   list-style: none;
@@ -32,6 +34,8 @@ table {
   justify-content: space-between;
   border-bottom: 3px solid #258ba4;
 }
+
+.proc_bar_box .active{background: #258ba4; color: #fff}
 
 .proc_bar_box li {
   padding: 10px 20px;
@@ -103,55 +107,87 @@ table {
 .sr_box {
     display: flex;
     flex-wrap: wrap;
-    max-width: 950px;
+    /* max-width: 950px; */
+    border-bottom: 1px solid #ddd;
 }
-.sr_box .cl:first-child{border-top:1px solid #ddd}
+.sr_box > textarea{border: 1px solid #ddd;width: 100%;padding: 1rem;}
+.sr_box .cl:first-child{/* border-top:1px solid #ddd; */}
 .sr_box .cl {
     display: flex;
-    width: 100%;
+    width: 50%;
     align-items: center;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     z-index: 9;
     overflow: hidden;
-    border-top: 0px;
+    /* border-top: 0px; */
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+    border-right: 0px;
+    border-left: 1px solid #ddd;
 }
-
+.sr_box .cl100{width: 100%;}
+.sr_box .cl100 > div{width: 90% !important;}
+.sr_box .cl100 > div input{max-width: 100% !important;}
 .sr_box .cl p {
     margin: 0px;
     padding: 0.5rem 2rem;
-    white-space: nowrap;
+    white-space: pre-wrap;
     width: 120px;
-    text-align: center;
+    text-align: left;
     background: #f6fbff;
     height: 100%;
     align-items: center;
-    display: flex;
+    display: block;
     font-weight: 700;
-    justify-content: center;
+    display: flex;
     z-index: 0;
     position: relative;
-    width: 110px;
+    width: 40%;
+    max-width: 180px;
     border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
+    /* border-left: 1px solid #ddd; */
 }
 
 .sr_box .cl > div {
     display: flex;
     padding: .5rem 2rem;
     background: #fff;
-    width: auto;
+    width: 80%;
+    flex-wrap: wrap;
 }
+
+.sr_box .cl > .fl_nw{flex-wrap: nowrap;}
+.fl_nw{display: flex;flex-wrap: nowrap;}
+
+.sr_box .cl > div textarea{width: 100%;margin-top: 1rem;border-color: #ddd;resize: none;}
+.sr_box .cl > .em{display: flex; align-items: center;}
+.sr_box .cl > .em select{margin-left: 6px;}
+.sr_box .cl > .tel{display: flex; align-items: center;}
+.sr_box .cl > .radio{display: flex; align-items: center;}
+.sr_box .cl > .checkbox{display: flex; align-items: center;}
+.sr_box .cl > div span{margin: 0px 6px;display: flex;white-space: nowrap;align-items: center;}
+
 .sr_box .cl > div select{
     width: 100%;
-    padding: .5rem 2rem;
+    padding: .5rem 1rem;
     border: 1px solid #ddd;
     margin-right: 6px;
+    height: 100%;
 }
 
 .sr_box .cl div input {
-    padding: 0.25rem;
+    padding: .5rem 0.25rem;
     border: 1px solid #ddd;
+    width: 100%;
+    display: block;
+    max-width: 480px;
+    height: 100%;
+    box-sizing: border-box;
 }
+
+.sr_box .cl00 div{width: 80%;}
+.sr_box .cl00 div input{width: 100%;max-width: none;}
+
 
 .sr_box .cl div small {
     display: flex;
@@ -180,8 +216,7 @@ table {
     background: rgb(4 125 150);
 }
 
-.pj_table {
-}
+.pj_table {width: 100%;}
 
 .pj_table .cl_fr {
     display: flex;
@@ -238,9 +273,10 @@ table {
 }
 
 .pj_table .pj_content_wrap .pj_content > div {
-    display: flex;
-    padding: 1rem;
+    padding: .5rem 1rem;
     width: 20%;
+    display: flex;
+    align-items: center;
     border-width: 0px 0px 1px 1px;
     border-top-style: solid;
     border-bottom-style: solid;
@@ -251,8 +287,13 @@ table {
     border-image: initial;
     border-right-style: initial;
     border-right-color: initial;
+    font-size: 0.925rem;
+    text-align: center;
+    white-space: break-spaces;
 }
 
+.pj_table .pj_content_wrap .pj_content > div input{width: 100%;border-color: #ddd;padding: .5rem 0.25rem;border: 1px solid #ddd;width: 100%;display: block;max-width: 390px;height: 100%;margin: 0;box-sizing: border-box;}
+.pj_table .pj_content_wrap .pj_content > div input[type="radio"]{max-width: 18px;margin: 0 auto;}
 .pj_table .pj_content_wrap .pj_content > div:first-child {
     border-left: 0px;
 }
@@ -264,6 +305,8 @@ table {
     border: 1px solid #666;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
+    font-size: .75rem;
+    margin-top: .125rem;
 }
 
 .pj_table .pj_pagenation_wrap {
@@ -311,7 +354,7 @@ table {
     color: #fff;
     margin-left: auto;
     display: block;
-    width: 2rem;
+    width: 7rem;
     text-align: center;
     margin: 1rem 0 1rem auto;
 }
@@ -325,3 +368,42 @@ table {
 .mentor_info_wrap .mi_container .mi_content p{}
 .mentor_info_wrap .mi_container .mi_content div{}
 .mentor_info_wrap .mi_container .mi_content div input{}
+
+.pj_table .pj_content_wrap .pj_content > .tw5{width: 5%;}
+.pj_table .pj_content_wrap .pj_content > .tw10{width: 10%;}
+.pj_table .pj_content_wrap .pj_content > .tw20{width: 20%;}
+.pj_table .pj_content_wrap .pj_content > .tw30{width: 30%;}
+.pj_table .pj_content_wrap .pj_content > .tw40{width: 40%;}
+.pj_table .pj_content_wrap .pj_content > .tw50{width: 50%;}
+.pj_table .pj_content_wrap .pj_content > .ip2 input{width: 80%; max-width: 100%;}
+.pj_table .pj_content_wrap .pj_content > .ip2 input:last-child{width: 20%;margin-left: 12px;}
+.pj_table .pj_table_hd .tw5{width: 5%;}
+.pj_table .pj_table_hd .tw10{width: 10%;}
+.pj_table .pj_table_hd .tw20{width: 20%;}
+.pj_table .pj_table_hd .tw30{width: 30%;}
+.pj_table .pj_table_hd .tw40{width: 40%;}
+.pj_table .pj_table_hd .tw50{width: 50%;}
+.pj_table .pj_content_wrap .pj_content > .tw10{width: 10%;}
+
+.acodian_01{}
+.acodian_01 .sr_title{margin-top: 2rem;font-size: 1.125rem;padding: 1rem;font-weight: 700;cursor: pointer;display: flex;justify-content: space-between;align-items: center;border-bottom: 3px solid #ddd;}
+.acodian_01 .sr_title p{margin: 0;}
+
+#spwrapc{display: flex;flex-wrap: wrap;padding: 0;}
+#spwrapc > div{width: 100%;margin: 0;padding: 0;display: flex;align-items: center;border-bottom: 1px solid #ddd;z-index: 9;}
+#spwrapc > div p{
+    border: 0px;
+    border-right: 1px solid #ddd;
+    background: #f9f9f9;
+    display: grid;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+#spwrapc > div:last-child{border-bottom:0px}
+#spwrapc > div div{
+    width: 100%;
+    padding: .5rem 2rem;
+}
+#spwrapc > div div input{}
+#spwrapc > div div select{}
