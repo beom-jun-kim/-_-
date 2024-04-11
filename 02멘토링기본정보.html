@@ -167,7 +167,7 @@
             </div>
             <div class="cl">
                 <p>담당자 직통번호</p>
-                <div class="tel">
+                <div class="tel fl_nw">
 
                     <input type="text">
                     <span>-</span>
@@ -178,7 +178,7 @@
             </div>
             <div class="cl">
                 <p>담당자 E-Mail</p>
-                <div class="em">
+                <div class="em fl_nw">
                     
                     <input type="text">
                     <span>@</span>
@@ -369,5 +369,14 @@
 
 
 </body>
+<script>
+    const togglingBtns = document.querySelectorAll('.sr_title'); 
 
+togglingBtns.forEach(function(btns){ 
+    btns.addEventListener ("click", function() { 
+        btns.parentElement.classList.toggle('sr_active_dn');
+        
+    });
+})
+    </script>
 </html>
