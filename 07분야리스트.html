@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h6 class="tb_title">분야리스트</h6>
+
+    <div class="pj_table">
+        <div class="cl_fr">
+            <p>전체 1건 페이지 1/1</p>
+            <div class="pj_btnwrap">
+                <button type="" class="btn_type01">분야등록</button>
+            </div>
+        </div>
+        <div class="pj_table_hd">
+            <div class="tw10"><input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()"></div>
+            <div class="tw30">분야코드</div>
+            <div class="tw50">분야명</div>
+            <div class="tw10">삭제</div>
+        </div>
+        <div class="pj_content_wrap">
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            <div class="pj_content">
+                <div class="tw10"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw30">분야코드</div>
+                <div class="tw50">분야명</div>
+                <div class="tw10"><button type="">삭제</button></div>
+            </div>
+            
+        </div>
+        <script>
+            function toggleAllCheckboxes() {
+                var selectAllCheckbox = document.getElementById("selectAll");
+                var checkboxes = document.querySelectorAll(".checkbox-item");
+
+                for (var i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].checked = selectAllCheckbox.checked;
+                }
+            }
+        </script>
+        <div class="pj_pagenation_wrap">
+            <div class="first">
+                <i class="fa-solid fa-angles-left"></i>
+            </div>
+            <div class="prev">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <p class="page_active">1</p>
+            <p>2</p>
+            <div class="next">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="last">
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
