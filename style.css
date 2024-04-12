@@ -109,6 +109,7 @@ table {
     flex-wrap: wrap;
     /* max-width: 950px; */
     border-bottom: 1px solid #ddd;
+    /* border-right: 1px solid #ddd; */
 }
 .sr_box > textarea{border: 1px solid #ddd;width: 100%;padding: 1rem;resize: none;}
 .sr_box .cl:first-child{/* border-top:1px solid #ddd; */}
@@ -123,7 +124,7 @@ table {
     box-sizing: border-box;
     border-top: 1px solid #ddd;
     border-right: 0px;
-    border-left: 1px solid #ddd;
+    /* border-left: 1px solid #ddd; */
 }
 .sr_box .cl100{width: 100%;}
 .sr_box .cl100 > div{width: 90% !important;}
@@ -150,7 +151,7 @@ table {
     position: relative;
     width: 40%;
     max-width: 180px;
-    border-right: 1px solid #ddd;
+    /* border-right: 1px solid #ddd; */
     /* border-left: 1px solid #ddd; */
 }
 
@@ -190,7 +191,7 @@ table {
     height: 100%;
     box-sizing: border-box;
 }
-
+.sr_box .cl div input[type="tel"]{text-align: center;}
 .sr_box .cl div .readonly{background: #eaeaea;}
 .sr_box .cl00 div{width: 80%;}
 .sr_box .cl00 div input{width: 100%;max-width: none;}
@@ -210,9 +211,10 @@ table {
 .sr_box .cl div .btn_grl div {
     margin-left: 12px;
     border: 1px solid rgb(215, 215, 215);
-    padding: 0.75rem;
+    padding: .5rem 0.75rem;
     white-space: nowrap;
     cursor: pointer;
+    font-size: .8rem;
 }
 
 .sr_box .cl div .btn_grl div select {
@@ -251,7 +253,7 @@ table {
     padding: 0.75rem 1rem;
     background: rgb(246 251 255);
     width: 20%;
-    border-right: 1px solid #ddd;
+    /* border-right: 1px solid #ddd; */
     font-weight: 700;
     white-space: nowrap;
 }
