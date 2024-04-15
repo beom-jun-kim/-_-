@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
-
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +12,32 @@
 </head>
 
 <body>
-    <h6>프로젝트 현황</h6>
+    <h6 class="tb_title">프로젝트 현황</h6>
     <div class="sr_box">
         <div class="cl cl100">
             <p>사업기간</p>
             <div class="fl_nw">
-                <input type="text"> <small>~</small> <input type="text">
+                <input type="date"> <small>~</small> <input ㅋtype="date">
                 <div class="btn_grl">
-                    <div class="btn_active">1개월</div>
-                    <div>3개월</div>
-                    <div>6개월</div>
-                    <div>12개월</div>
+                    <div class="btn_active" onclick="selectSubscription(1)">1개월</div>
+                    <div onclick="selectSubscription(2)">3개월</div>
+                    <div onclick="selectSubscription(3)">6개월</div>
+                    <div onclick="selectSubscription(4)">12개월</div>
                 </div>
+                
+                <script>
+                function selectSubscription(months) {
+                    var buttons = document.querySelectorAll('.btn_grl div');
+                    buttons.forEach(function(button) {
+                        button.classList.remove('btn_active');
+                    });
+                
+                    var selectedButton = document.querySelector('.btn_grl div:nth-child(' + months + ')');
+                    selectedButton.classList.add('btn_active');
+                
+                }
+                </script>
+                
             </div>
         </div>
         <div class="cl cl100">
@@ -86,19 +103,21 @@
         </div>
         <div class="pj_pagenation_wrap">
             <div class="first">
-                << </div>
-                    <div class="prev">
-                        < </div>
-                            <p class="page_active">1</p>
-                            <p>2</p>
-                            <div class="next">
-                                >
-                            </div>
-                            <div class="last">
-                                >>
-                            </div>
-                    </div>
+                <i class="fa-solid fa-angles-left"></i>
             </div>
+            <div class="prev">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <p class="page_active">1</p>
+            <p>2</p>
+            <div class="next">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="last">
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
+        </div>
+    </div>
 
 </body>
 
