@@ -22,7 +22,7 @@
 
             <p>컨설팅번호</p>
             <div>
-                <input type="text">
+                <input readonly type="text">
             </div>
 
 
@@ -31,14 +31,14 @@
             <p>컨설팅부문</p>
             <div>
 
-                <input type="text">
+                <input readonly type="text">
             </div>
         </div>
         <div class="cl">
 
             <p>수행컨설턴트</p>
             <div>
-                <input type="text">
+                <input readonly type="text">
             </div>
 
         </div>
@@ -46,14 +46,14 @@
             <p>담당 PM</p>
             <div>
 
-                <input type="text">
+                <input readonly type="text">
             </div>
         </div>
         <div class="cl">
             <p>진행상태</p>
             <div>
 
-                <input type="text">
+                <input readonly type="text">
             </div>
         </div>
         <div class="cl"></div>
@@ -72,7 +72,7 @@
 
                 <p>기업체명</p>
                 <div>
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
 
 
@@ -81,14 +81,14 @@
                 <p>대표자명</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
 
                 <p>담당부점</p>
                 <div>
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
 
 
@@ -98,80 +98,80 @@
                 <p>접수자(ID)</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>신청입력일</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>설립일</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>업종</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>상시종업원</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>전화번호</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>대표자휴대전화</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl cl100">
                 <p>사업장주소</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>담당자 성명</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>담당자 직위</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>담당자 직통번호</p>
                 <div class="tel fl_nw">
-                    <input type="tel" id="phoneNumber1" maxlength="3" oninput="formatPhoneNumber()">
+                    <input readonly type="tel" id="phoneNumber1" maxlength="3" oninput readonly="formatPhoneNumber()">
                     <span>-</span>
-                    <input type="tel" id="phoneNumber2" maxlength="4" oninput="formatPhoneNumber()">
+                    <input readonly type="tel" id="phoneNumber2" maxlength="4" oninput readonly="formatPhoneNumber()">
                     <span>-</span>
-                    <input type="tel" id="phoneNumber3" maxlength="4" oninput="formatPhoneNumber()">
+                    <input readonly type="tel" id="phoneNumber3" maxlength="4" oninput readonly="formatPhoneNumber()">
                 </div>
             </div>
             
@@ -198,10 +198,10 @@
                 <p>담당자 E-Mail</p>
                 <div class="em fl_nw">
 
-                    <input type="text">
+                    <input readonly type="text">
                     <span>@</span>
-                    <input type="text" type="email" id="customEmail" name="customEmail" style="display: none;">
-                    <select id="emailSelect" name="emailSelect" onchange="toggleCustomEmail()">
+                    <input readonly type="text" type="email" id="customEmail" name="customEmail" style="display: none;">
+                    <select disabled="disabled" id="emailSelect" name="emailSelect" onchange="toggleCustomEmail()">
                         <option value="select">선택</option>
                         <option value="naver">naver.com</option>
                         <option value="gmail">gmail.com</option>
@@ -218,14 +218,14 @@
     <script>
         function toggleCustomEmail() {
             var emailSelect = document.getElementById("emailSelect");
-            var customEmailInput = document.getElementById("customEmail");
+            var customEmailinput readonly = document.getElementById("customEmail");
         
             if (emailSelect.value === "custom") {
-                customEmailInput.style.display = "inline"; // 직접 입력란 보이기
-                customEmailInput.required = true; // 필수 입력으로 설정
+                customEmailinput readonly.style.display = "inline"; // 직접 입력란 보이기
+                customEmailinput readonly.required = true; // 필수 입력으로 설정
             } else {
-                customEmailInput.style.display = "none"; // 직접 입력란 숨기기
-                customEmailInput.required = false; // 필수 입력 해제
+                customEmailinput readonly.style.display = "none"; // 직접 입력란 숨기기
+                customEmailinput readonly.required = false; // 필수 입력 해제
             }
         }
         </script>
@@ -237,7 +237,7 @@
 
                 <p>계약체결일</p>
                 <div>
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
 
 
@@ -246,14 +246,14 @@
                 <p>컨설팅기간</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
 
                 <p>수행컨설턴트</p>
                 <div>
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
 
 
@@ -263,62 +263,62 @@
                 <p>컨설팅종류</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>담당자(PM)</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>컨설팅부문</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>당기매출액</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>본점소재지</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>기업특성</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>우대기업</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>세부수행과제</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
                 <p>핵심키워드</p>
                 <div>
-                    <select name="" id="">
+                    <select name="" id="" disabled="disabled">
                         <option value="">선택</option>
                         <option value=""></option>
                     </select>
@@ -334,36 +334,36 @@
                 <p>신청경로</p>
                 <div class="checkbox">
                     <span>
-                        <input type="checkbox" id="newsletterCheckbox">
+                        <input readonly type="checkbox" id="newsletterCheckbox">
                         <label for="newsletterCheckbox">뉴스레터</label>
                     </span>
                     <span>
-                        <input type="checkbox" id="employeeRecommendationCheckbox">
+                        <input readonly type="checkbox" id="employeeRecommendationCheckbox">
                         <label for="employeeRecommendationCheckbox">직원권유</label>
                     </span>
                     <span>
-                        <input type="checkbox" id="internetCheckbox">
+                        <input readonly type="checkbox" id="internetCheckbox">
                         <label for="internetCheckbox">인터넷</label>
                     </span>
                     <span>
-                        <input type="checkbox" id="otherCheckbox" onchange="toggleOtherReason()">
+                        <input readonly type="checkbox" id="otherCheckbox" onchange="toggleOtherReason()">
                         <label for="otherCheckbox">기타</label>
                     </span>
-                    <input type="text" id="otherReasonInput" style="display: none; margin-top: .5rem;" placeholder="기타 사유를 입력하세요">
+                    <input readonly type="text" id="otherReasoninput readonly" style="display: none; margin-top: .5rem;" placeholder="기타 사유를 입력하세요">
 
                 </div>
                 
                 <script>
                 function toggleOtherReason() {
                     var otherCheckbox = document.getElementById("otherCheckbox");
-                    var otherReasonInput = document.getElementById("otherReasonInput");
+                    var otherReasoninput readonly = document.getElementById("otherReasoninput readonly");
                 
                     if (otherCheckbox.checked) {
-                        otherReasonInput.style.display = "inline"; // 입력란 보이기
-                        otherReasonInput.required = true; // 필수 입력으로 설정
+                        otherReasoninput readonly.style.display = "inline"; // 입력란 보이기
+                        otherReasoninput readonly.required = true; // 필수 입력으로 설정
                     } else {
-                        otherReasonInput.style.display = "none"; // 입력란 숨기기
-                        otherReasonInput.required = false; // 필수 입력 해제
+                        otherReasoninput readonly.style.display = "none"; // 입력란 숨기기
+                        otherReasoninput readonly.required = false; // 필수 입력 해제
                     }
                 }
                 </script>
@@ -375,14 +375,14 @@
                 <p>추천직원</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
             <div class="cl">
 
                 <p>수진기업계약여부</p>
                 <div>
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
 
 
@@ -392,7 +392,7 @@
                 <p>컨설턴트계약여부</p>
                 <div>
 
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
             </div>
 
@@ -400,7 +400,7 @@
 
                 <p>반려사유</p>
                 <div>
-                    <input type="text">
+                    <input readonly type="text">
                 </div>
 
 
