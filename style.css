@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"); * {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"); 
+@import url('/font-awesome-4.6.3/css/font-awesome.min.css');
+
+* {
   box-sizing: border-box;
   word-break: keep-all;
   font-family: "Noto Sans KR", sans-serif;
@@ -13,6 +16,8 @@ html, body {
   font-weight: 400;
   color: rgba(0,0,0,.88);
 }
+
+input{position: relative;}
 
 input:focus {
   border: 0px rgb(15, 91, 129);
@@ -44,7 +49,7 @@ input:focus::after {
   width: 0%;
   background: rgb(15, 91, 129);
   position: absolute;
-  top: 0px;
+  bottom: 0px;
   left: 50%;
   transform: translate(-50%);
   transition: all 0.35s ease 0s;
@@ -74,7 +79,6 @@ table {
 }
 
 .proc_bar {
-  margin-top: 100px;
 }
 
 .proc_bar_box {
@@ -360,7 +364,7 @@ table {
   justify-content: space-between;
 }
 
-.pj_table .cl_fr p {font-size: .925rem;}
+.pj_table .cl_fr p {font-size: .925rem;margin: 0;}
 
 .pj_table .cl_fr small {
 }
@@ -373,6 +377,7 @@ table {
   border-bottom: 1px solid rgb(221, 221, 221);
   border-top: 1px solid rgb(221, 221, 221);
   width: 100%;
+  margin-top: .75rem;
 }
 
 .pj_table .pj_table_hd div {
@@ -947,7 +952,7 @@ table {
 
 .modal-content .modal-btn-wrap {
   display: flex;
-  gap: 1rem;
+  gap: .75rem;
   flex-wrap: wrap;
   margin-top: 2rem;
 }
@@ -957,7 +962,7 @@ table {
   text-align: center;
   margin-top: 0rem;
   background: rgb(221, 221, 221);
-  padding: 0.85rem;
+  padding: .725rem 0.85rem;
   border-radius: 0.5rem;
   color: rgb(51, 51, 51);
   cursor: pointer;
@@ -966,4 +971,93 @@ table {
 .modal-content .modal-btn-wrap .confilrm {
   background: rgb(15, 91, 129);
   color: rgb(255, 255, 255);
+}
+
+
+
+#final_result {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.proc_bar {
+}
+
+.proc_bar_box {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid #258ba4;
+}
+
+.proc_bar_box li {
+  padding: 0 20px;
+  border: 1px solid #eee;
+  text-align: center;
+  width: 16%;
+  border-bottom: none;
+  height: 42px;
+  line-height: 42px;
+}
+.proc_bar_box a {
+    display: block;
+    height: 100%;
+}
+.journal_tabel {
+  width: 100%;
+}
+.journal_tabel tbody tr {
+  height: 50px;
+  display: flex;
+}
+.journal_tabel tbody tr td {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.journal_tabel thead th,
+.journal_tabel tbody tr td {
+  border: 1px solid #eee;
+}
+.journal_tabel tbody tr td input {
+  padding: 7px;
+  width: 95%;
+}
+.journal_tabel tbody tr td:nth-child(odd) {
+  background: #f6fbff;
+  flex: 2;
+}
+
+.journal_tabel tbody tr td:nth-child(even) {
+  flex: 8;
+}
+
+.final_result_data {
+  width: 100%;
+}
+
+.final_result_data thead th {
+  background: #f6fbff;
+  border: 1px solid #eee;
+  padding: 10px 8px;
+}
+.final_result_data tbody tr td {
+  border: 1px solid #eee;
+  text-align: center;
+  height: 45px;
+}
+.final_result_data tbody tr td:nth-child(2) {
+  text-align: left;
+}
+.journal_search_btn {
+  background: #f6fbff;
+  border: 1px solid #258ba4;
+  padding: 3px 5px;
+}
+.final_result_data input[type="date"] {
+  padding: 3px;
+  border: 1px solid #eee;
+}
+.final_result_svg {
+    transform: translate(3px,5px);
 }

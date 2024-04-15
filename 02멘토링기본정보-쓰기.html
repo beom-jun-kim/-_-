@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="proc_bar_box">
+        <li class="active">컨설팅 기본정보</li>
+        <li>수행계획</li>
+        <li>업무일지</li>
+        <li>완료보고</li>
+        <li>산출물</li>
+    </ul>
+    <div class="sr_box">
+
+        <div class="cl">
+
+            <p>컨설팅번호</p>
+            <div>
+                <input type="text">
+            </div>
+
+
+        </div>
+        <div class="cl">
+            <p>컨설팅부문</p>
+            <div>
+
+                <input type="text">
+            </div>
+        </div>
+        <div class="cl">
+
+            <p>수행컨설턴트</p>
+            <div>
+                <input type="text">
+            </div>
+
+        </div>
+        <div class="cl">
+            <p>담당 PM</p>
+            <div>
+
+                <input type="text">
+            </div>
+        </div>
+        <div class="cl">
+            <p>진행상태</p>
+            <div>
+
+                <input type="text">
+            </div>
+        </div>
+        <div class="cl"></div>
+    </div>
+    </div>
+
+
+
+
+
+    <div class="acodian_01">
+        <div class="sr_title">기업정보<p><i class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div class="sr_box">
+            <div class="cl">
+
+                <p>기업체명</p>
+                <div>
+                    <input type="text">
+                </div>
+
+
+            </div>
+            <div class="cl">
+                <p>대표자명</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+
+                <p>담당부점</p>
+                <div>
+                    <input type="text">
+                </div>
+
+
+
+            </div>
+            <div class="cl">
+                <p>접수자(ID)</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>신청입력일</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>설립일</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>업종</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>상시종업원</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>전화번호</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>대표자휴대전화</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl cl100">
+                <p>사업장주소</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>담당자 성명</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>담당자 직위</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>담당자 직통번호</p>
+                <div class="tel fl_nw">
+                    <input type="tel" id="phoneNumber1" maxlength="3" oninput="formatPhoneNumber()">
+                    <span>-</span>
+                    <input type="tel" id="phoneNumber2" maxlength="4" oninput="formatPhoneNumber()">
+                    <span>-</span>
+                    <input type="tel" id="phoneNumber3" maxlength="4" oninput="formatPhoneNumber()">
+                </div>
+            </div>
+            
+            <script>
+            function formatPhoneNumber() {
+                var phoneNumber1 = document.getElementById("phoneNumber1").value;
+                var phoneNumber2 = document.getElementById("phoneNumber2").value;
+                var phoneNumber3 = document.getElementById("phoneNumber3").value;
+            
+                // 각 입력란의 값이 숫자인지 확인
+                if (!(/^\d*$/.test(phoneNumber1))) {
+                    document.getElementById("phoneNumber1").value = phoneNumber1.slice(0, -1);
+                }
+                if (!(/^\d*$/.test(phoneNumber2))) {
+                    document.getElementById("phoneNumber2").value = phoneNumber2.slice(0, -1);
+                }
+                if (!(/^\d*$/.test(phoneNumber3))) {
+                    document.getElementById("phoneNumber3").value = phoneNumber3.slice(0, -1);
+                }
+            }
+            </script>
+            
+            <div class="cl">
+                <p>담당자 E-Mail</p>
+                <div class="em fl_nw">
+
+                    <input type="text">
+                    <span>@</span>
+                    <input type="text" type="email" id="customEmail" name="customEmail" style="display: none;">
+                    <select disabled="disabled" id="emailSelect" name="emailSelect" onchange="toggleCustomEmail()">
+                        <option value="select">선택</option>
+                        <option value="naver">naver.com</option>
+                        <option value="gmail">gmail.com</option>
+                        <option value="daum">daum.net</option>
+                        <option value="nate">nate.com</option>
+                        <option value="custom">직접 입력</option>
+                    </select>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleCustomEmail() {
+            var emailSelect = document.getElementById("emailSelect");
+            var customEmailinput = document.getElementById("customEmail");
+        
+            if (emailSelect.value === "custom") {
+                customEmailinput.style.display = "inline"; // 직접 입력란 보이기
+                customEmailinput.required = true; // 필수 입력으로 설정
+            } else {
+                customEmailinput.style.display = "none"; // 직접 입력란 숨기기
+                customEmailinput.required = false; // 필수 입력 해제
+            }
+        }
+        </script>
+    <div class="acodian_01">
+        <div class="sr_title">계약정보<p><i class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div class="sr_box">
+            <div class="cl">
+
+                <p>계약체결일</p>
+                <div>
+                    <input type="text">
+                </div>
+
+
+            </div>
+            <div class="cl">
+                <p>컨설팅기간</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+
+                <p>수행컨설턴트</p>
+                <div>
+                    <input type="text">
+                </div>
+
+
+
+            </div>
+            <div class="cl">
+                <p>컨설팅종류</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>담당자(PM)</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>컨설팅부문</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>당기매출액</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>본점소재지</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>기업특성</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>우대기업</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>세부수행과제</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+                <p>핵심키워드</p>
+                <div>
+                    <select name="" id="" disabled="disabled">
+                        <option value="">선택</option>
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="acodian_01">
+        <div class="sr_title">컨설팅 신청 경로 및 계약여부<p><i class="fa-solid fa-chevron-down"></i></p></div>
+        <div class="sr_box">
+            <div class="cl cl100">
+
+                <p>신청경로</p>
+                <div class="checkbox">
+                    <span>
+                        <input type="checkbox" id="newsletterCheckbox">
+                        <label for="newsletterCheckbox">뉴스레터</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="employeeRecommendationCheckbox">
+                        <label for="employeeRecommendationCheckbox">직원권유</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="internetCheckbox">
+                        <label for="internetCheckbox">인터넷</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="otherCheckbox" onchange="toggleOtherReason()">
+                        <label for="otherCheckbox">기타</label>
+                    </span>
+                    <input type="text" id="otherReasoninput" style="display: none; margin-top: .5rem;" placeholder="기타 사유를 입력하세요">
+
+                </div>
+                
+                <script>
+                function toggleOtherReason() {
+                    var otherCheckbox = document.getElementById("otherCheckbox");
+                    var otherReasoninput = document.getElementById("otherReasoninput");
+                
+                    if (otherCheckbox.checked) {
+                        otherReasoninput.style.display = "inline"; // 입력란 보이기
+                        otherReasoninput.required = true; // 필수 입력으로 설정
+                    } else {
+                        otherReasoninput.style.display = "none"; // 입력란 숨기기
+                        otherReasoninput.required = false; // 필수 입력 해제
+                    }
+                }
+                </script>
+
+
+            </div>
+
+            <div class="cl">
+                <p>추천직원</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+            <div class="cl">
+
+                <p>수진기업계약여부</p>
+                <div>
+                    <input type="text">
+                </div>
+
+
+
+            </div>
+            <div class="cl">
+                <p>컨설턴트계약여부</p>
+                <div>
+
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="cl">
+
+                <p>반려사유</p>
+                <div>
+                    <input type="text">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="acodian_01">
+        <div class="sr_title">컨설팅 요청사항 <p><i class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div class="sr_box">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+    </div>
+    <div class="btn_search">목록</div>
+
+
+</body>
+<script>
+    const togglingBtns = document.querySelectorAll('.sr_title');
+
+    togglingBtns.forEach(function (btns) {
+        btns.addEventListener("click", function () {
+            btns.parentElement.classList.toggle('sr_active_dn');
+
+        });
+    })
+</script>
+
+</html>

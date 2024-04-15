@@ -34,7 +34,10 @@ document.getElementById('modal_btn').addEventListener('click', function() {
 document.getElementsByClassName('close')[0].addEventListener('click', function() {
     document.getElementById('modal_a').style.display = 'none';
 });
-
+  // 모달 닫기
+  document.getElementsByClassName('close_b')[0].addEventListener('click', function () {
+        document.getElementById('modal_a').style.display = 'none';
+    });
 // 모달 바깥을 클릭하면 모달 닫기
 window.addEventListener('click', function(event) {
     var modal = document.getElementById('modal_a');
