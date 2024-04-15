@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+    <section id="final_result">
+      <div class="proc_bar">
+        <ul class="proc_bar_box">
+          <li>컨설팅 기본정보</li>
+          <li>수행계획</li>
+          <li><a href="./업무일지.html">업무일지</a></li>
+          <li><a href="./완료보고.html">완료보고</a></li>
+          <li style="background: #258ba4; color: #fff"><a href="./산출물.html">산출물</a></li>
+        </ul>
+      </div>
+      <table class="journal_tabel">
+        <tbody>
+          <tr>
+            <td>컨설팅 부문</td>
+            <td>
+              <input type="text" disabled value="Value-Up" />
+            </td>
+            <td>수행 컨설턴트</td>
+            <td>
+              <input type="text" disabled />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="journal_tabel">
+        <tbody>
+          <tr>
+            <td>담당 PM</td>
+            <td>
+              <input type="text" disabled value="강병진" />
+            </td>
+            <td>진행상태</td>
+            <td>
+              <input type="text" disabled value="완료보고중" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="final_result_data">
+        <div class="final_result_title">
+          <h3>산출물</h3>
+        </div>
+        <table class="final_result_data" style="border-collapse: collapse">
+          <thead>
+            <th style="width: 8%">순번</th>
+            <th>수행활동</th>
+            <th style="width: 25%">실제수행일</th>
+            <th style="width: 25%">등록자 ID</th>
+          </thead>
+          <tbody>
+            <td>1</td>
+            <td>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#111"
+                width="20px"
+                height="20px"
+                viewBox="-8 0 32 32"
+                version="1.1"
+                class="final_result_svg"
+              >
+                <title>paper</title>
+                <path
+                  d="M13.52 5.72h-7.4c-0.36 0-0.56 0.2-0.6 0.24l-5.28 5.28c-0.040 0.040-0.24 0.24-0.24 0.56v12.2c0 1.24 1 2.24 2.24 2.24h11.24c1.24 0 2.24-1 2.24-2.24v-16.040c0.040-1.24-0.96-2.24-2.2-2.24zM5.28 8.56v1.8c0 0.32-0.24 0.56-0.56 0.56h-1.84l2.4-2.36zM14.080 24.040c0 0.32-0.28 0.56-0.56 0.56h-11.28c-0.32 0-0.56-0.28-0.56-0.56v-11.36h3.040c1.24 0 2.24-1 2.24-2.24v-3.040h6.52c0.32 0 0.56 0.24 0.56 0.56l0.040 16.080z"
+                />
+              </svg>
+              <a href="" download="컨설팅수행일지_로보스텍1차_24.02.06.hwp">컨설팅수행일지_로보스텍1차_24.02.06.hwp</a>
+            </td>
+            <td>20240226</td>
+            <td>sb101</td>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>

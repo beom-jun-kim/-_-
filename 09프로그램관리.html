@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 분야생성 모달 -->
+    <div id="modal_a" class="modal">
+
+        <!-- 모달 컨텐츠 -->
+        <div class="modal-content">
+            <h2>프로그램 등록</h2>
+            <span class="close">&times;</span>
+            <div class="modal-content-li">
+                <label for="">분야코드</label>
+                <input type="text" placeholder="분야코드를 입력하세요">
+            </div>
+            <div class="modal-content-li">
+                <label for="">프로그램명</label>
+                <input type="text" placeholder="프로그램명을 입력하세요">
+            </div>
+            <div class="modal-btn-wrap">
+                <div class="close_b">취소</div>
+                <div class="confilrm">저장</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <h6 class="tb_title">프로그램 관리</h6>
+
+    <div class="pj_table">
+        <div class="cl_fr">
+            <p>전체 1건 페이지 1/1</p>
+            <div class="pj_btnwrap">
+                <button type="" class="btn_type02">삭제</button>
+                <button type="" id="modal_btn" class="btn_type01">프로그램등록</button>
+            </div>
+        </div>
+        <div class="pj_table_hd">
+            <div class="tw5"><input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()"></div>
+            <div class="tw5">순번</div>
+            <div class="tw10">분야코드</div>
+            <div class="tw10">ORDER_NO</div>
+            <div class="tw20">프로그램명 </div>
+            <div class="tw20">PLAN_DIVISION </div>
+            <div class="tw10">PLAN_SCORE </div>
+            <div class="tw10">PLAN_WAY </div>
+            <div class="tw10">수정</div>
+        </div>
+        <div class="pj_content_wrap">
+            <div class="pj_content">
+                <div class="tw5"><input type="checkbox" class="checkbox-item"></div>
+                <div class="tw5">1</div>
+                <div class="tw10">분야코드</div>
+                <div class="tw10">ORDER_NO</div>
+                <div class="tw20">프로그램명 </div>
+                <div class="tw20">PLAN_DIVISION </div>
+                <div class="tw10">PLAN_SCORE </div>
+                <div class="tw10">PLAN_WAY </div>
+                <div class="tw10"><button type="">수정</button></div>
+            </div>
+
+
+        </div>
+        <script>
+            function toggleAllCheckboxes() {
+                var selectAllCheckbox = document.getElementById("selectAll");
+                var checkboxes = document.querySelectorAll(".checkbox-item");
+
+                for (var i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].checked = selectAllCheckbox.checked;
+                }
+            }
+        </script>
+        <div class="pj_pagenation_wrap">
+            <div class="first">
+                <i class="fa-solid fa-angles-left"></i>
+            </div>
+            <div class="prev">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <p class="page_active">1</p>
+            <p>2</p>
+            <div class="next">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="last">
+                <i class="fa-solid fa-angles-right"></i>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // 모달 열기
+    document.getElementById('modal_btn').addEventListener('click', function () {
+        document.getElementById('modal_a').style.display = 'flex';
+    });
+
+    // 모달 닫기
+    const modalCloseBtn = document.querySelectorAll('.close');
+    const modalClose_bBtn = document.querySelectorAll('.close_b');
+
+    modalCloseBtn[0].addEventListener('click', function (){
+        document.getElementById('modal_a').style.display = 'none';
+    });
+    modalClose_bBtn[0].addEventListener('click',function(){
+        document.getElementById('modal_a').style.display = 'none';
+    })
+        // 모달 닫기
+        //   document.getElementsByClassName('close_b')[0].addEventListener('click', function () {
+        //     document.getElementById('modal_a').style.display = 'none';
+        // });
+        // 모달 바깥을 클릭하면 모달 닫기
+        window.addEventListener('click', function (event) {
+        var modal = document.getElementById('modal_a');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    
+</script>
+
+</html>

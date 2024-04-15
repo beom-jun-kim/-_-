@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    textarea,
+    input {
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+    #proc_bar_section {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .proc_bar {
+      margin-top: 100px;
+    }
+
+    .proc_bar_box {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 3px solid #258ba4;
+    }
+
+    .proc_bar_box li {
+      padding: 0 20px;
+      border: 1px solid #eee;
+      text-align: center;
+      width: 16%;
+      border-bottom: none;
+      height: 42px;
+      line-height: 42px;
+    }
+
+    .proc_bar_box a {
+      display: block;
+      height: 100%;
+    }
+
+    .journal_table {
+      width: 100%;
+    }
+    .journal_table tbody tr {
+      height: 50px;
+      display: flex;
+    }
+    .journal_table tbody tr td {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+
+    .journal_table thead th,
+    .journal_table tbody tr td {
+      border: 1px solid #eee;
+    }
+    .journal_table tbody tr td input {
+      padding: 7px;
+      width: 95%;
+    }
+    .journal_table tbody tr td:nth-child(odd) {
+      background: #f6fbff;
+      flex: 2;
+    }
+
+    .journal_table tbody tr td:nth-child(even) {
+      flex: 8;
+    }
+
+    .journal_table_data {
+      width: 100%;
+    }
+
+    .journal_table_data thead th {
+      background: #f6fbff;
+      border: 1px solid #eee;
+      padding: 10px 8px;
+    }
+    .journal_table_data tbody tr td {
+      border: 1px solid #eee;
+      text-align: center;
+      height: 45px;
+    }
+    .journal_table_data tbody tr td:nth-child(3) {
+      text-align: left;
+      padding-left: 3px;
+    }
+    .journal_search_btn {
+      background: #f6fbff;
+      border: 1px solid #258ba4;
+      padding: 3px 5px;
+      cursor: pointer;
+    }
+    .journal_table_data input[type="date"] {
+      padding: 3px;
+      border: 1px solid #eee;
+    }
+
+    #jouranl_search_modal {
+      width: 850px;
+      background: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    #jouranl_search_modal.active {
+      display: block;
+    }
+    .jouranl_search_title {
+      background: #115d81;
+      padding: 8px 17px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .jouranl_search_title span {
+      cursor: pointer;
+    }
+
+    .jouranl_search_title p {
+      margin: 0;
+    }
+    .jouranl_search_content {
+      padding: 25px 20px;
+      overflow-y: scroll;
+      height: 480px;
+      border: 1px solid #eee;
+    }
+
+    .jouranl_search_textarea_wrap textarea {
+      width: 100%;
+      height: 80px;
+      resize: none;
+      overflow-y: scroll;
+      border: 1px solid #c9c9c9;
+      text-indent: 10px;
+      padding: 10px 0;
+      outline: none;
+      font-size: 15px;
+    }
+    .jouranl_search_upload_text {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .jouranl_search_upload_text p {
+      margin: 5px 0 0 5px;
+    }
+
+    .filebox {
+      display: flex;
+      gap: 10px;
+    }
+    .filebox input {
+      border: 1px solid #dbdbdb;
+      background-color: #fff;
+      font-size: 16px;
+    }
+    .filebox .upload-name {
+      width: 100%;
+      height: 30px;
+      padding: 4.5px 15px;
+      pointer-events: none;
+    }
+    .filebox .file {
+      display: none;
+    }
+    .filebox .upload-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 4.5px 15px;
+      border: 1px solid #115d81;
+      color: #115d81;
+      cursor: pointer;
+      line-height: 1;
+      transition: all 0.3s;
+      background: #daf3ff;
+    }
+    select#jouranl_search_select {
+      padding: 6px 2px;
+      margin: 10px 0;
+      outline: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .jouranl_search_modal_write_table {
+      width: 100%;
+    }
+
+    .jouranl_search_modal_write_table tbody tr td {
+      border: 1px solid #111;
+      height: 40px;
+      padding: 0 10px;
+    }
+    .jouranl_search_modal_write_table
+      tbody
+      .jouranl_search_modal_write_table_info
+      td:nth-child(odd) {
+      background: #eee;
+    }
+    .jouranl_search_modal_write_table tbody tr td:nth-child(n + 1) {
+      width: calc((100%) / 4);
+    }
+    .jouranl_search_modal_write_text_align {
+      display: flex;
+      justify-content: space-between;
+    }
+    .jouranl_search_modal_write_table
+      tbody
+      .jouranl_search_modal_write_table_detail
+      td {
+      padding: 20px;
+    }
+    .jouranl_search_modal_write_table
+      tbody
+      .jouranl_search_modal_write_table_detail
+      td:first-child {
+      text-align: center;
+    }
+    .jouranl_search_modal_write_table
+      tbody
+      .jouranl_search_modal_write_table_textarea {
+      width: 100%;
+      min-height: 100%;
+      resize: vertical;
+    }
+    .jouranl_search_modal_write_check {
+      text-align: center;
+      font-size: 20px;
+    }
+    .jouranl_search_modal_write_check_date {
+      margin: 10px 0 20px;
+    }
+    .jouranl_search_modal_write_check_date input {
+      font-size: 20px;
+      border: none;
+      outline: none;
+    }
+    .jouranl_search_modal_write_table_info input {
+      width: 100%;
+      padding: 10px 0;
+    }
+    .jouranl_search_modal_write_table_info input[id="mentor_name"],
+    .jouranl_search_modal_write_table_info input[id="group"] {
+      width: 76%;
+    }
+    .file_delete_button {
+      background: none;
+      border: 1px solid #dbdbdb;
+      cursor: pointer;
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    .overlay.active {
+      display: block;
+    }
+    #image_preview {
+      display: none;
+      max-width: 500px;
+      max-height: 500px;
+    }
+  </style>
+  <body>
+    <section id="proc_bar_section">
+      <div class="proc_bar">
+        <ul class="proc_bar_box">
+          <li>컨설팅 기본정보</li>
+          <li>수행계획</li>
+          <li style="background: #258ba4; color: #fff">
+            <a href="./업무일지.html">업무일지</a>
+          </li>
+          <li><a href="./완료보고.html">완료보고</a></li>
+          <li><a href="./산출물.html">산출물</a></li>
+        </ul>
+      </div>
+      <table class="journal_table">
+        <tbody>
+          <tr>
+            <td>컨설팅 부문</td>
+            <td>
+              <input type="text" disabled value="Value-Up" />
+            </td>
+            <td>수행 컨설턴트</td>
+            <td>
+              <input type="text" disabled />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="journal_table">
+        <tbody>
+          <tr>
+            <td>담당 PM</td>
+            <td>
+              <input type="text" disabled value="강병진" />
+            </td>
+            <td>진행상태</td>
+            <td>
+              <input type="text" disabled value="완료보고중" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="journal_wrap_data">
+        <div class="journal_title">
+          <h3>업무일지</h3>
+        </div>
+        <table class="journal_table_data" style="border-collapse: collapse">
+          <thead>
+            <th style="width: 5%"><input type="checkbox" /></th>
+            <th style="width: 5%">순번</th>
+            <th style="width: 25%">수행활동</th>
+            <th style="width: 5%">상세<br />보기</th>
+            <th style="width: 10%">실제수행일정</th>
+            <th style="width: 10%">승인여부</th>
+            <th>비고</th>
+            <th>특이사항</th>
+          </thead>
+          <tbody>
+            <td><input type="checkbox" /></td>
+            <td>1</td>
+            <td>kick-off미팅, VOC 청취</td>
+            <td>
+              <button class="journal_search_btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td><input type="date" value="2024-04-03" /></td>
+            <td>여</td>
+            <td></td>
+            <td></td>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="overlay"></div>
+    <div id="jouranl_search_modal">
+      <div class="jouranl_search_title">
+        <p>업무일지 작성</p>
+        <span class="jouranl_search_modal_delete_btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M16 8L8 16M8.00001 8L16 16"
+              stroke="#ffffff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="jouranl_search_content">
+        <select id="jouranl_search_select">
+          <option value="file">첨부파일로 제출</option>
+          <option value="journal">일지작성으로 제출</option>
+        </select>
+
+        <!-- 첨부파일로 제출 -->
+        <div class="jouranl_search_modal_file_wrap">
+          <div class="jouranl_search_textarea">
+            <div class="jouranl_search_textarea_title">
+              <p>업무일지</p>
+            </div>
+            <div class="jouranl_search_textarea_wrap">
+              <textarea
+                placeholder="수행내용은 첨부파일을 확인하시기 바랍니다"
+              ></textarea>
+            </div>
+          </div>
+          <div class="jouranl_search_upload">
+            <div class="jouranl_search_upload_title">
+              <p>첨부파일</p>
+            </div>
+            <div class="filebox">
+              <label for="file_01" class="upload-button">파일찾기</label>
+              <input
+                class="upload-name"
+                type="text"
+                placeholder="파일명"
+                readonly
+              />
+              <input
+                type="file"
+                id="file_01"
+                class="file"
+                title="파일 업로드"
+              />
+              <button class="file_delete_button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M16 8L8 16M8.00001 8L16 16"
+                    stroke="#000000"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="jouranl_search_upload_text_box">
+              <div class="jouranl_search_upload_text">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.5 2.2a10.3 10.3 0 1 0 10.3 10.3A10.299 10.299 0 0 0 12.5 2.2zM12 7h1v7h-1zm.5 10.5a1 1 0 1 1 1-1 1.002 1.002 0 0 1-1 1z"
+                  />
+                  <path fill="none" d="M0 0h24v24H0z" />
+                </svg>
+                <p>
+                  보고서 파일이 여러개운 경우, zip 파일로 압축하여 한개 파일로
+                  제출해 주십시오
+                </p>
+              </div>
+              <div class="jouranl_search_upload_text">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.5 2.2a10.3 10.3 0 1 0 10.3 10.3A10.299 10.299 0 0 0 12.5 2.2zM12 7h1v7h-1zm.5 10.5a1 1 0 1 1 1-1 1.002 1.002 0 0 1-1 1z"
+                  />
+                  <path fill="none" d="M0 0h24v24H0z" />
+                </svg>
+                <p>파일용량 최대 nMB까지 업로드 가능합니다</p>
+              </div>
+            </div>
+          </div>
+          <div class="jouranl_search_textarea_pm">
+            <div class="jouranl_search_textarea_title">
+              <p>PM 멘트</p>
+            </div>
+            <div class="jouranl_search_textarea_wrap">
+              <textarea></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- 일지작성으로 제출 -->
+        <div class="jouranl_search_modal_write_wrap">
+          <div class="jouranl_search_modal_write_title">
+            <p>컨설팅 결과보고서</p>
+          </div>
+          <table class="jouranl_search_modal_write_table">
+            <tbody>
+              <tr class="jouranl_search_modal_write_table_info">
+                <td>
+                  <div class="jouranl_search_modal_write_text_align">
+                    <span>기</span>
+                    <span>업</span>
+                    <span>명</span>
+                  </div>
+                </td>
+                <td colspan="3">
+                  <input type="text" id="company_name" name="company_name" />
+                </td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_info">
+                <td>
+                  <div class="jouranl_search_modal_write_text_align">
+                    <span>성</span>
+                    <span>명</span>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="name" name="name" />
+                </td>
+                <td>
+                  <div class="jouranl_search_modal_write_text_align">
+                    <span>직</span>
+                    <span>위</span>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="level" name="level" />
+                </td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_info">
+                <td>
+                  <div class="jouranl_search_modal_write_text_align">
+                    <span>컨</span>
+                    <span>설</span>
+                    <span>팅</span>
+                    <span>일</span>
+                    <span>시</span>
+                  </div>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="consulting_date"
+                    name="consulting_date"
+                  />
+                </td>
+                <td>
+                  <div class="jouranl_search_modal_write_text_align">
+                    <span>핸</span>
+                    <span>드</span>
+                    <span>폰</span>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" id="phone_num" name="phone_num" />
+                </td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_info">
+                <td>
+                  <div class="jouranl_search_modal_write_text_align">
+                    <span>컨</span>
+                    <span>설</span>
+                    <span>턴</span>
+                    <span>트</span>
+                  </div>
+                </td>
+                <td>
+                  <span>성명: </span>
+                  <input type="text" id="mentor_name" name="mentor_name" />
+                </td>
+                <td colspan="2" style="background: none">
+                  <span>소속: </span>
+                  <input type="text" id="group" name="group" />
+                </td>
+              </tr>
+
+              <tr class="jouranl_search_modal_write_table_detail">
+                <td colspan="4" style="padding: 5px 0">주요내용</td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_detail">
+                <td>컨설팅분야</td>
+                <td colspan="3">
+                  <textarea
+                    id="tagName"
+                    class="jouranl_search_modal_write_table_textarea"
+                    placeholder="모든 텍스트를 한눈에 보려면 밑 아이콘으로 크기를 늘려주세요"
+                  ></textarea>
+                </td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_detail">
+                <td>
+                  컨실팅 주제<br />
+                  및 내용
+                </td>
+                <td colspan="3" style="line-height: 24px">
+                  <textarea
+                    id="subject"
+                    class="jouranl_search_modal_write_table_textarea"
+                    placeholder="모든 텍스트를 한눈에 보려면 밑 아이콘으로 크기를 늘려주세요"
+                  ></textarea>
+                </td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_detail">
+                <td>기타소견</td>
+                <td colspan="3">
+                  <textarea
+                    id="etc"
+                    class="jouranl_search_modal_write_table_textarea"
+                    placeholder="모든 텍스트를 한눈에 보려면 밑 아이콘으로 크기를 늘려주세요"
+                  ></textarea>
+                </td>
+              </tr>
+              <tr class="jouranl_search_modal_write_table_detail">
+                <td>관련사진</td>
+                <td colspan="3">
+                  <input
+                    type="file"
+                    id="related_photo"
+                    name="related_photo"
+                    accept="image/*"
+                  />
+                  <img
+                    id="image_preview"
+                    src="#"
+                    alt="Image Preview"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="jouranl_search_modal_write_check">
+            <div class="jouranl_search_modal_write_check_submit">
+              <p>위와 같이 컨설팅 결과보고서를 제출합니다</p>
+            </div>
+            <div class="jouranl_search_modal_write_check_date">
+              <input type="date" value="2024-01-01" />
+            </div>
+            <div class="jouranl_search_modal_write_check_mentor">
+              <span> 컨설턴트 : </span>
+              <input type="text" /> (인)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // 모달창 닫기 및 열기
+    const jouranlSearchModalDeleteBtn = document.querySelector(
+      ".jouranl_search_modal_delete_btn"
+    );
+    const jouranlSearchModal = document.getElementById("jouranl_search_modal");
+    const journalSearchBtn = document.querySelector(".journal_search_btn");
+    const overlay = document.querySelector(".overlay");
+    jouranlSearchModalDeleteBtn.addEventListener("click", function () {
+      jouranlSearchModal.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+    journalSearchBtn.addEventListener("click", function () {
+      jouranlSearchModal.classList.add("active");
+      overlay.classList.add("active");
+    });
+
+    // 제출 방식에 따라 화면 전환
+    const submitSelect = document.getElementById("jouranl_search_select");
+
+    const fileWrap = document.querySelector(".jouranl_search_modal_file_wrap");
+    const writeWrap = document.querySelector(
+      ".jouranl_search_modal_write_wrap"
+    );
+
+    fileWrap.style.display = "block";
+    writeWrap.style.display = "none";
+
+    submitSelect.addEventListener("change", function () {
+      const selectOption = submitSelect.value;
+
+      if (selectOption === "file") {
+        fileWrap.style.display = "block";
+        writeWrap.style.display = "none";
+      } else if (selectOption === "journal") {
+        fileWrap.style.display = "none";
+        writeWrap.style.display = "block";
+      }
+    });
+
+    // 파일 업로드
+    let fileInput = document.querySelector(".filebox .file");
+    let nameInput = document.querySelector(".filebox .upload-name");
+    fileInput.addEventListener("change", function (e) {
+      const input = e.target.closest(".file");
+      if (!input) return;
+      let fileName = input.value.split("/").pop().split("\\").pop();
+      nameInput.value = fileName;
+    });
+
+    // textarea 마우스 포커스시 placeholder 텍스트 숨김
+    const tagName = document.getElementsByClassName(
+      "jouranl_search_modal_write_table_textarea"
+    );
+
+    for (let i = 0; i < tagName.length; i++) {
+      tagName[i].addEventListener("focus", function () {
+        this.removeAttribute("placeholder");
+      });
+      tagName[i].addEventListener("blur", function () {
+        this.setAttribute(
+          "placeholder",
+          "모든 텍스트를 한눈에 보려면 밑 아이콘으로 크기를 늘려주세요"
+        );
+      });
+    }
+
+    // 업로드 파일 삭제
+    const uploadDeleteBtn = document.querySelector(".file_delete_button");
+    const uploadNameInput = document.querySelector(".upload-name");
+    const fileBox = document.querySelector(".file");
+
+    uploadDeleteBtn.addEventListener("click", function () {
+      if (uploadNameInput.value) {
+        if (confirm("업로드한 파일을 삭제하시겠습니까?")) {
+          fileBox.value = "";
+          uploadNameInput.value = "";
+        } else {
+          return;
+        }
+      } else {
+        alert("업로드된 파일이 없습니다");
+      }
+    });
+
+    // 관련사진란 이미지 업로드
+    const relatedPhoto = document.getElementById('related_photo');
+    relatedPhoto.addEventListener("change", function(){
+      const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("image_preview").src = e.target.result;
+            document.getElementById("image_preview").style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        }
+    })
+  </script>
+</html>
