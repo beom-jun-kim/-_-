@@ -1,124 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-/>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
 </head>
+<div class="topMenu preR">
+    <div class="navbar navbar-expand-lg navbar-white bg-white wrap">
 
-<body>
-    <h6 class="tb_title">프로젝트 현황</h6>
-    <div class="sr_box">
-        <div class="cl cl100">
-            <p>사업기간</p>
-            <div class="fl_nw">
-                <input type="date"> <small>~</small> <input type="date">
-                <div class="btn_grl">
-                    <div class="btn_active" onclick="selectSubscription(1)">1개월</div>
-                    <div onclick="selectSubscription(2)">3개월</div>
-                    <div onclick="selectSubscription(3)">6개월</div>
-                    <div onclick="selectSubscription(4)">12개월</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <div class="ci">
+                <router-link class="navbar-brand a2" to="/">
+                    <img
+                        src="data:image/png;base64,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" />
+                </router-link>
+            </div>
+
+            <ul class="">
+
+
+                
+
+                <li class="nav-item dropdown menuTopBar" v-if="menuMentoring">
+                    <div class="serviceCenterMenuBtn">
+                        <div class="nav-link menu3 a2" id="serviceCenter" style="cursor:pointer;">
+                            프로그램관리
+                        </div>
+                        <ul class="dropdown-menu serviceCenterSubMenu">
+                            <li>
+                                <router-link class="dropdown-item" to="">
+                                    프로그램목록
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item" to="">
+                                    프로그램등록
+                                </router-link>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown menuTopBar" v-if="menuMento">
+                    <div class="serviceCenterMenuBtn">
+                        <div class="nav-link menu3 a2" id="serviceCenter" style="cursor:pointer;">
+                            <router-link class="nav-link menu8 a2" to="/main/mentor/mentorMatch">분야</router-link>
+                        </div>
+                        <ul class="dropdown-menu serviceCenterSubMenu">
+                            <li>
+                                <router-link class="dropdown-item" to="/main/mentor/mentorMatch">
+                                    분야리스트
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item" to="/main/mentor/mentorHistory">
+                                    분야등록
+                                </router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown menuTopBar" v-if="menuMentoring">
+                    <div class="serviceCenterMenuBtn">
+                        <div class="nav-link menu3 a2" id="serviceCenter" style="cursor:pointer;">
+                            멘티
+                        </div>
+                        <ul class="dropdown-menu serviceCenterSubMenu">
+                            <li>
+                                <router-link class="dropdown-item" to="">
+                                    멘티목록
+                                </router-link>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item dropdown menuTopBar" v-if="menuMentoring">
+                    <div class="serviceCenterMenuBtn">
+                        <div class="nav-link menu3 a2" id="serviceCenter" style="cursor:pointer;">
+                            고객사
+                        </div>
+                        <ul class="dropdown-menu serviceCenterSubMenu">
+                            <li>
+                                <router-link class="dropdown-item" to="">
+                                    고객사목록
+                                </router-link>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item dropdown menuTopBar" v-if="menuMentoring">
+                    <div class="serviceCenterMenuBtn">
+                        <div class="nav-link menu3 a2" id="serviceCenter" style="cursor:pointer;">
+                            회원사
+                        </div>
+                        <ul class="dropdown-menu serviceCenterSubMenu">
+                            <li>
+                                <router-link class="dropdown-item" to="">
+                                    회원사목록
+                                </router-link>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- <li class="nav-item dropdown menuTopBar" v-if="menuCs">
+            <div class="serviceCenterMenuBtn">
+              <div class="nav-link menu3 a2" id="serviceCenter" style="cursor:pointer;">
+                고객센터
+              </div>
+              <ul class="dropdown-menu serviceCenterSubMenu">
+                <li>
+                  <router-link class="dropdown-item" to="/main/notice">
+                    공지사항
+                  </router-link>
+                </li>
+                <li>
+                  <router-link class="dropdown-item" to="/main/faq">
+                    자주 묻는 질문
+                  </router-link>
+
+                </li>
+                <li>
+                  <router-link class="dropdown-item" :to="`/main/qna/${userId}`">
+                    문의하기
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </li> 
+          <li class="nav-item menuTopBar" v-if="menuSign">
+            <router-link class="nav-link menu4 a2" to="/main/ticketList">구독하기</router-link>
+          </li>
+          
+          <div v-if="menuMypage">
+            <li class="nav-item menuTopBar">
+              <router-link class="nav-link menu5 a2" to="/main/mypage">마이페이지</router-link>
+            </li>
+          </div>
+-->
+
+                
+            </ul>
+
+
+            <ul class="">
+                <div v-if="loggedIn == true" class="d-flex">
+                    <li class="nav-item">
+                        <router-link class="nav-link menu5 a2" to="/main/mypage"><i
+                                class="fa-regular fa-user"></i>마이페이지</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <a href @click.prevent="logOut" class="nav-link text-dark btnWrap">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>로그아웃
+                        </a>
+                    </li>
                 </div>
-                
-                <script>
-                function selectSubscription(months) {
-                    var buttons = document.querySelectorAll('.btn_grl div');
-                    buttons.forEach(function(button) {
-                        button.classList.remove('btn_active');
-                    });
-                
-                    var selectedButton = document.querySelector('.btn_grl div:nth-child(' + months + ')');
-                    selectedButton.classList.add('btn_active');
-                
-                }
-                </script>
-                
-            </div>
-        </div>
-        <div class="cl cl100">
-
-            <p>구분</p>
-            <div>
-                <select name="" id="">
-                    <option value="전체">전체</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-
-            <p>검색</p>
-            <div class="fl_nw">
-                <select name="" id="">
-                    <option value="선택">선택</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <input type="text">
-            </div>
+                <div v-else>
+                    <div class="d-flex">
+                        <li class="nav-item">
+                            <router-link to="/main/MemberLogin" class="nav-link text-dark btnWrap">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>로그인
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/main/join" class="nav-link text-dark btnWrap">
+                                <i class="fa-regular fa-user"></i>회원가입
+                            </router-link>
+                        </li>
+                    </div>
+                </div>
+            </ul>
         </div>
     </div>
-    <div class="btn_search">조회</div>
-    <div class="pj_table">
-        <div class="cl_fr">
-            <p>전체 1건 페이지 1/1</p>
-            <small>(단위:원)</small>
-        </div>
-        <div class="pj_table_hd">
-            <div>신청일</div>
-            <div class="tw30">기업명</div>
-            <div>컨설턴트</div>
-            <div>담당PM</div>
-            <div>컨설팅 종류</div>
-            <div>컨설팅 부문</div>
-            <div>컨설팅 기간</div>
-            <div>계약일</div>
-            <div>진행상태</div>
-            <div>상세보기</div>
-        </div>
-        <div class="pj_content_wrap">
-            <div class="pj_content">
-                <div>2024-01-31</div>
-                <div class="tw30">(주)로보스텍</div>
-                <div>(주)메라클</div>
-                <div>강병진</div>
-                <div>특화컨설팅</div>
-                <div>Value-Up</div>
-                <div>2024-02-26 ~ 2024-03-29<div class="button_pj">계약관리</div>
+</div>
+
+<body id="app">
+    <div class="sp_wrap">
+        <div class="sp_container">
+            <h6 class="tb_title">프로젝트 현황</h6>
+            <div class="sr_box">
+                <div class="cl cl100">
+                    <p>사업기간</p>
+                    <div class="fl_nw">
+                        <input type="date"> <small>~</small> <input type="date">
+                        <div class="btn_grl">
+                            <div class="btn_active" onclick="selectSubscription(1)">1개월</div>
+                            <div onclick="selectSubscription(2)">3개월</div>
+                            <div onclick="selectSubscription(3)">6개월</div>
+                            <div onclick="selectSubscription(4)">12개월</div>
+                        </div>
+
+                        <script>
+                            function selectSubscription(months) {
+                                var buttons = document.querySelectorAll('.btn_grl div');
+                                buttons.forEach(function (button) {
+                                    button.classList.remove('btn_active');
+                                });
+
+                                var selectedButton = document.querySelector('.btn_grl div:nth-child(' + months + ')');
+                                selectedButton.classList.add('btn_active');
+
+                            }
+                        </script>
+
+                    </div>
                 </div>
-                <div></div>
-                <div>완료보고중</div>
-                <div>
-                    <div class="button_pj">상세</div>
+                <div class="cl cl100">
+
+                    <p>구분</p>
+                    <div>
+                        <select name="" id="">
+                            <option value="전체">전체</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <p>검색</p>
+                    <div class="fl_nw">
+                        <select name="" id="">
+                            <option value="선택">선택</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <input type="text">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="pj_pagenation_wrap">
-            <div class="first">
-                <i class="fa-solid fa-angles-left"></i>
+            <div class="btn_search">조회</div>
+            <div class="pj_table">
+                <div class="cl_fr">
+                    <p>전체 1건 페이지 1/1</p>
+                    <small>(단위:원)</small>
+                </div>
+                <div class="pj_table_hd">
+                    <div>신청일</div>
+                    <div class="tw30">기업명</div>
+                    <div>컨설턴트</div>
+                    <div>담당PM</div>
+                    <div>컨설팅 종류</div>
+                    <div>컨설팅 부문</div>
+                    <div>컨설팅 기간</div>
+                    <div>계약일</div>
+                    <div>진행상태</div>
+                    <div>상세보기</div>
+                </div>
+                <div class="pj_content_wrap">
+                    <div class="pj_content">
+                        <div>2024-01-31</div>
+                        <div class="tw30">(주)로보스텍</div>
+                        <div>(주)메라클</div>
+                        <div>강병진</div>
+                        <div>특화컨설팅</div>
+                        <div>Value-Up</div>
+                        <div>2024-02-26 ~ 2024-03-29<div class="button_pj">계약관리</div>
+                        </div>
+                        <div></div>
+                        <div>완료보고중</div>
+                        <div>
+                            <div class="button_pj">상세</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pj_pagenation_wrap">
+                    <div class="first">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </div>
+                    <div class="prev">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                    <p class="page_active">1</p>
+                    <p>2</p>
+                    <div class="next">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="last">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </div>
+                </div>
             </div>
-            <div class="prev">
-                <i class="fa-solid fa-angle-left"></i>
-            </div>
-            <p class="page_active">1</p>
-            <p>2</p>
-            <div class="next">
-                <i class="fa-solid fa-angle-right"></i>
-            </div>
-            <div class="last">
-                <i class="fa-solid fa-angles-right"></i>
-            </div>
+
         </div>
     </div>
-
 </body>
+<div class="footer">
+    <footer class="container-fluid">
+        <div class="row justify-content-between p-4">
+            <div class="col-12 col-md-6 col-lg-8 mb-3 mb-md-0">
+                <div class="mb-3 ft_Lline">
+                    <img
+                        src="data:image/png;base64,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">
+                    <div>
+                        <b class="fs-5">(주)메라클</b>
+                        <a href="/main/termsCom" class="ms-3 text-decoration-none">개인정보처리방침</a>
+                        <a href="/main/termsCom" class="ms-3 text-decoration-none">이용약관</a>
+                    </div>
+                </div>
+                <div class="small">
+                    대표이사 : 이동규 | 전화 : 051-911-3330~7 | 이메일 : office1@meraklus.com<br />
+                    사업자 등록번호 : 617-86-09934 | 통신판매업 신고번호 : 2018-부산해운대-0428<br />
+                    주소 : 부산광역시 해운대구 센텀중앙로 97(재송동), 센텀스카이비즈 A동
+                    2407호
+                </div>
+                <div class="small mb-0">
+                    Since 2019 © 2023 MERAKL Co.,Ltd.All Rights Reserved<span @click="goBackDoor">.</span>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-md-6 col-lg-4 d-flex align-items-end">
+          <a href="/"><img src="../../../public/img/main/bmds-logo-gray.png" class="img-fluid" alt="Company Logo" /></a>
+        </div> -->
+        </div>
+    </footer>
+</div>
 
 </html>

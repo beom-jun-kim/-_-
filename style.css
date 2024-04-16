@@ -12,10 +12,6 @@
 html, body {
   padding: 0px;
   box-sizing: border-box;
-
-  max-width: 1400px;
-  /* max-width: 1400px; */
-
   margin: 0px auto;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
@@ -1083,7 +1079,6 @@ table {
     box-sizing: border-box;
     border-top: 1px solid #ddd;
     border-right: 0px;
-    border-left: 1px solid #ddd;
 }
 .sr_box .cl100{width: 100%;}
 .sr_box .cl100 > div{width: 90% !important;}
@@ -1104,7 +1099,7 @@ table {
     height: 100%;
     align-items: center;
     display: block;
-    font-weight: 700;
+    font-weight: 500;
     display: flex;
     z-index: 0;
     position: relative;
@@ -1212,7 +1207,7 @@ table {
     background: rgb(246 251 255);
     width: 20%;
     border-right: 1px solid #ddd;
-    font-weight: 700;
+    font-weight: 500;
     white-space: nowrap;
 }
 
@@ -1304,6 +1299,9 @@ table {
 .pj_table .pj_pagenation_wrap div {
     padding: 0.75rem;
     cursor: pointer;
+    text-align: center;
+    font-size: .85rem;
+    color: #aaa;
 }
 
 .pj_table .pj_pagenation_wrap p {
@@ -2293,7 +2291,8 @@ progress {
   padding: 5px;
   border: 1px solid #999;
   border-radius: 20px;
-  width: 110px;
+  /* width: 110px; */
+  margin-left: 1rem;
 }
 
 .topMenu>.wrap.menu>span:hover>.submenu {
@@ -2383,8 +2382,8 @@ progress {
 .md_wrap{background: #fff;}
 #app{background: #f5f5f7;}
 
-.sp_wrap{min-height: calc(100vh - 178px);margin: 0rem auto;padding-top: 88px;}
-.sp_wrap .sp_container{max-width: 1400px;margin: 3rem auto 5rem;background: #fff;border-radius: .75rem;padding: 4rem 4rem 2rem;min-height: 80vh;}
+.sp_wrap{min-height: calc(100vh - 380px);margin: 0rem auto;padding-top: 88px;}
+.sp_wrap .sp_container{max-width: 1400px;margin: 3rem auto 5rem;background: #fff;border-radius: .75rem;padding: 4rem 4rem 2rem;min-height: 45vh;}
 .sp_wrap .sp_container .table{background: #fff;}
 .sp_wrap .sp_container button {border: 0px;background: #999;color: white;border-radius: 10px;padding: .5rem 1.125rem;font-size: .75rem;white-space: nowrap;margin-left: 14px;}
 .sp_wrap .sp_container button:first-child{margin-left:0px}
@@ -5416,13 +5415,14 @@ fieldset:disabled .btn {
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+  border-radius: .25rem;
 }
 .dropdown-item:hover,
 .dropdown-item:focus {
-  color: var(--bs-dropdown-link-hover-color);
-  background-color: var(--bs-dropdown-link-hover-bg);
+  color: #fff;
+  background-color: #644d9d;
 }
-.dropdown-item.active,
+.dropdown-item.hover,
 .dropdown-item:active {
   color: var(--bs-dropdown-link-active-color);
   text-decoration: none;
@@ -17061,7 +17061,7 @@ input[type="file"] {
 .ttl {
   margin-top: 7%;
 }
-.svg-inline--fa{margin-right: 5px;}
+.svg-inline--fa{margin-right: 5px !important;}
 
 .final_result_svg {
     transform: translate(3px,5px);
