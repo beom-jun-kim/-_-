@@ -161,9 +161,12 @@
 
             <ul class="">
                 <div v-if="loggedIn == true" class="d-flex">
+                    
                     <li class="nav-item">
-                        <router-link class="nav-link menu5 a2" to="/main/mypage"><i
-                                class="fa-regular fa-user"></i>마이페이지</router-link>
+                        <a href @click.prevent="logOut" class="nav-link text-dark btnWrap">
+                            <i
+                                class="fa-regular fa-user"></i>마이페이지
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href @click.prevent="logOut" class="nav-link text-dark btnWrap">
@@ -173,16 +176,18 @@
                 </div>
                 <div v-else>
                     <div class="d-flex">
-                        <li class="nav-item">
-                            <router-link to="/main/MemberLogin" class="nav-link text-dark btnWrap">
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i>로그인
-                            </router-link>
-                        </li>
+                        
                         <li class="nav-item">
                             <router-link to="/main/join" class="nav-link text-dark btnWrap">
                                 <i class="fa-regular fa-user"></i>회원가입
                             </router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link to="/main/MemberLogin" class="nav-link text-dark btnWrap">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>로그인
+                            </router-link>
+                        </li>
+                        
                     </div>
                 </div>
             </ul>

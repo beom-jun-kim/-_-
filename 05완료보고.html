@@ -4,122 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
   </head>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    table {
-      border-collapse: collapse;
-    }
-    #result_report {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .proc_bar {
-      margin-top: 100px;
-    }
-
-    .proc_bar_box {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 3px solid #258ba4;
-    }
-
-    .proc_bar_box li {
-      padding: 0 20px;
-      border: 1px solid #eee;
-      text-align: center;
-      width: 16%;
-      border-bottom: none;
-      height: 42px;
-      line-height: 42px;
-    }
-    .proc_bar_box a {
-        display: block;
-        height: 100%;
-    }
-    .journal_tabel {
-      width: 100%;
-    }
-    .journal_tabel tbody tr {
-      height: 50px;
-      display: flex;
-    }
-    .journal_tabel tbody tr td {
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-    }
-
-    .journal_tabel thead th,
-    .journal_tabel tbody tr td {
-      border: 1px solid #eee;
-    }
-    .journal_tabel tbody tr td input {
-      padding: 7px;
-      width: 95%;
-    }
-    .journal_tabel tbody tr td:nth-child(odd) {
-      background: #f6fbff;
-      flex: 2;
-    }
-
-    .journal_tabel tbody tr td:nth-child(even) {
-      flex: 8;
-    }
-    .result_report_table {
-        width: 100%;
-    }
-    .result_report_table tr {
-        height: 50px;
-    }
-    .result_report_table tr:nth-child(n+4) {
-        height: 100px;
-    }
-    .result_report_table tr td {
-        border: 1px solid #eee;
-        padding-left: 5px;
-    }
-    .result_report_table tr td:first-child {
-        background: #f6fbff;
-        width: 30%;
-    }
-    .result_report_table tr td:nth-child(n+2) {
-        width: 20px;
-    }
-    .result_report_table .result_report_textarea {
-        width: 98%;
-        border: 1px solid #eee;
-        height: 50px;
-        resize: none;
-        overflow-y: scroll;
-    }
-    .result_report_table .required_start {
-        color: rgb(207, 0, 0);
-        margin: 0 5px 0 0;
-        vertical-align: middle;
-    }
-    .result_report_table .text_count {
-        height: 20px;
-        background: #f0f0f0;
-        margin-bottom: 5px;
-    }
-  </style>
   <body>
     <section id="result_report">
       <div class="proc_bar">
@@ -131,34 +19,42 @@
           <li><a href="./산출물.html">산출물</a></li>
         </ul>
       </div>
-      <table class="journal_tabel">
-        <tbody>
-          <tr>
-            <td>컨설팅 부문</td>
-            <td>
-              <input type="text" disabled value="Value-Up" />
-            </td>
-            <td>수행 컨설턴트</td>
-            <td>
-              <input type="text" disabled />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="journal_tabel">
-        <tbody>
-          <tr>
-            <td>담당 PM</td>
-            <td>
-              <input type="text" disabled value="강병진" />
-            </td>
-            <td>진행상태</td>
-            <td>
-              <input type="text" disabled value="완료보고중" />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="sr_box">
+
+
+        <div class="cl">
+          <p>컨설팅부문</p>
+          <div>
+  
+            <input readonly type="text">
+          </div>
+        </div>
+        <div class="cl">
+  
+          <p>수행컨설턴트</p>
+          <div>
+            <input readonly type="text">
+          </div>
+  
+  
+  
+        </div>
+        <div class="cl">
+          <p>담당 PM</p>
+          <div>
+  
+            <input readonly type="text">
+          </div>
+        </div>
+        <div class="cl">
+          <p>진행상태</p>
+          <div>
+  
+            <input readonly type="text">
+          </div>
+        </div>
+      </div>
+      
 
       <div class="result_report_wrap">
         <div class="result_report_title">
