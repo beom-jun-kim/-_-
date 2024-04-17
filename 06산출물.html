@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  <body>
     <div class="sp_wrap">
       <div class="sp_container">
         <div class="proc_bar">
@@ -17,41 +16,34 @@
             <li>수행계획</li>
             <li><a href="./04업무일지.html">업무일지</a></li>
             <li><a href="./05완료보고.html">완료보고</a></li>
-            <li style="background: #258ba4; color: #fff"><a href="./06산출물.html">산출물</a></li>
+            <li style="background: #258ba4; color: #fff">
+              <a href="./06산출물.html">산출물</a>
+            </li>
           </ul>
         </div>
         <div class="sr_box">
-    
-    
           <div class="cl">
             <p>컨설팅부문</p>
             <div>
-    
-              <input readonly type="text">
+              <input readonly type="text" />
             </div>
           </div>
           <div class="cl">
-    
             <p>수행컨설턴트</p>
             <div>
-              <input readonly type="text">
+              <input readonly type="text" />
             </div>
-    
-    
-    
           </div>
           <div class="cl">
             <p>담당 PM</p>
             <div>
-    
-              <input readonly type="text">
+              <input readonly type="text" />
             </div>
           </div>
           <div class="cl">
             <p>진행상태</p>
             <div>
-    
-              <input readonly type="text">
+              <input readonly type="text" />
             </div>
           </div>
         </div>
@@ -59,10 +51,15 @@
         <div class="pj_table">
           <div class="cl_fr">
             <p>전체 1건 페이지 1/1</p>
-    
           </div>
           <div class="pj_table_hd">
-            <div class="tw5"><input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()"></div>
+            <div class="tw5">
+              <input
+                type="checkbox"
+                id="selectAll"
+                onchange="toggleAllCheckboxes()"
+              />
+            </div>
             <div class="tw5">순번</div>
             <div class="tw50">수행활동</div>
             <div class="tw20">실제수행일</div>
@@ -70,26 +67,38 @@
           </div>
           <div class="pj_content_wrap">
             <div class="pj_content">
-              <div class="tw5"><input type="checkbox" class="checkbox-item"></div>
+              <div class="tw5">
+                <input type="checkbox" class="checkbox-item" />
+              </div>
               <div class="tw5">1</div>
-              <div class="tw50"><svg xmlns="http://www.w3.org/2000/svg" fill="#111" width="20px" height="20px" viewBox="-8 0 32 32"
-                version="1.1" class="final_result_svg">
-                <title>paper</title>
-                <path
-                  d="M13.52 5.72h-7.4c-0.36 0-0.56 0.2-0.6 0.24l-5.28 5.28c-0.040 0.040-0.24 0.24-0.24 0.56v12.2c0 1.24 1 2.24 2.24 2.24h11.24c1.24 0 2.24-1 2.24-2.24v-16.040c0.040-1.24-0.96-2.24-2.2-2.24zM5.28 8.56v1.8c0 0.32-0.24 0.56-0.56 0.56h-1.84l2.4-2.36zM14.080 24.040c0 0.32-0.28 0.56-0.56 0.56h-11.28c-0.32 0-0.56-0.28-0.56-0.56v-11.36h3.040c1.24 0 2.24-1 2.24-2.24v-3.040h6.52c0.32 0 0.56 0.24 0.56 0.56l0.040 16.080z" />
-              </svg>
-              <a href="" download="컨설팅수행일지_로보스텍1차_24.02.06.hwp">컨설팅수행일지_로보스텍1차_24.02.06.hwp</a></div>
+              <div class="tw50">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#111"
+                  width="20px"
+                  height="20px"
+                  viewBox="-8 0 32 32"
+                  version="1.1"
+                  class="final_result_svg"
+                >
+                  <title>paper</title>
+                  <path
+                    d="M13.52 5.72h-7.4c-0.36 0-0.56 0.2-0.6 0.24l-5.28 5.28c-0.040 0.040-0.24 0.24-0.24 0.56v12.2c0 1.24 1 2.24 2.24 2.24h11.24c1.24 0 2.24-1 2.24-2.24v-16.040c0.040-1.24-0.96-2.24-2.2-2.24zM5.28 8.56v1.8c0 0.32-0.24 0.56-0.56 0.56h-1.84l2.4-2.36zM14.080 24.040c0 0.32-0.28 0.56-0.56 0.56h-11.28c-0.32 0-0.56-0.28-0.56-0.56v-11.36h3.040c1.24 0 2.24-1 2.24-2.24v-3.040h6.52c0.32 0 0.56 0.24 0.56 0.56l0.040 16.080z"
+                  />
+                </svg>
+                <a href="" download="컨설팅수행일지_로보스텍1차_24.02.06.hwp"
+                  >컨설팅수행일지_로보스텍1차_24.02.06.hwp</a
+                >
+              </div>
               <div class="tw20">2024.04.16</div>
               <div class="tw20"></div>
             </div>
-    
-    
           </div>
           <script>
             function toggleAllCheckboxes() {
               var selectAllCheckbox = document.getElementById("selectAll");
               var checkboxes = document.querySelectorAll(".checkbox-item");
-    
+
               for (var i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = selectAllCheckbox.checked;
               }
@@ -114,6 +123,5 @@
         </div>
       </div>
     </div>
-</body>
-
+  </body>
 </html>
