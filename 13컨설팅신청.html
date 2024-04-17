@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sp_wrap">
+        <div class="sp_container">
+            <h6>컨설팅 신청</h6>
+            <div class="consult_wrap">
+                <div class="consult_item" onclick="selectRadioButton('face_to_face')">
+                    <input type="radio" id="face_to_face" name="consultation" value="face_to_face">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    <label for="face_to_face">대면 컨설팅</label>
+                </div>
+                <div class="consult_item" onclick="selectRadioButton('non_face_to_face')">
+                    <input type="radio" id="non_face_to_face" name="consultation" value="non_face_to_face"> 
+                    <i class="fa-solid fa-desktop"></i>
+                    <label for="non_face_to_face">비대면 컨설팅</label>
+                </div>
+                <div class="consult_item" onclick="selectRadioButton('another_option')">
+                    <input type="radio" id="another_option" name="consultation" value="another_option"> 
+                    <i class="fa-solid fa-list-check"></i>
+                    <label for="another_option">다른 옵션</label>
+                </div>
+            </div>
+            
+
+            
+            
+            <script>
+                function selectRadioButton(id) {
+                    document.getElementById(id).checked = true;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
