@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="sp_wrap">
+        <div class="sp_container">
+
+
+
+            <h6>마이페이지</h6>
+            <div class="acodian_01">
+                <div class="sr_title">기업정보<p><i class="fa-solid fa-chevron-down"></i></p>
+                </div>
+                <div class="sr_box">
+                    
+                    
+                    
+
+                </div>
+            </div>
+            <div class="acodian_01">
+                <div class="sr_title">기업정보<p><i class="fa-solid fa-chevron-down"></i></p>
+                </div>
+                <div class="sr_box">
+                    <div class="cl cl100">
+                        <p>기업구분</p>
+                        <div>
+                            <select name="" id="">
+                                <option value="">주식회사</option>
+                                <option value="">유한회사</option>
+                                <option value="">유한책임회사</option>
+                                <option value="">합명회사</option>
+                                <option value="">합자회사</option>
+                            </select>
+                            <small></small>
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+                        <p>구분위치</p>
+                        <div>
+                            <select name="" id="">
+                                <option value="">앞</option>
+                                <option value="">뒤</option>
+                            </select>
+                            <small><i class="fa-solid fa-circle-exclamation"></i>(주)의 위치(법인기업만 선택)</small>
+
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+                        <p>기업체명</p>
+                        <div>
+                            <input type="text">
+                            <small></small>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <p>사업자번호</p>
+                        <div>
+                            <input type="text" id="businessNumber" oninput="formatBusinessRegistrationNumber(this)"
+                                maxlength="12">
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <p>법인번호</p>
+                        <div>
+                            <input type="text" id="corporateNumber" oninput="formatCorporateNumber(this)"
+                                maxlength="14">
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+                        <p>설립일</p>
+                        <div>
+                            <input type="date">
+                            <small><i class="fa-solid fa-circle-exclamation"></i>사업자등록증상의 개업 년 월일 (예:
+                                2012-07-12)</small>
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <p>업종</p>
+                        <div>
+
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <p>상시종업원</p>
+                        <div>
+
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <p>사업장 연락처</p>
+                        <div class="tel fl_nw">
+                            <input type="tel" id="phoneNumber1" maxlength="3" oninput="formatPhoneNumber()">
+                            <span>-</span>
+                            <input type="tel" id="phoneNumber2" maxlength="4" oninput="formatPhoneNumber()">
+                            <span>-</span>
+                            <input type="tel" id="phoneNumber3" maxlength="4" oninput="formatPhoneNumber()">
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <p>사업장 팩스번호</p>
+                        <div class="tel fl_nw">
+                            <input type="tel" id="phoneNumber1" maxlength="3" oninput="formatPhoneNumber()">
+                            <span>-</span>
+                            <input type="tel" id="phoneNumber2" maxlength="4" oninput="formatPhoneNumber()">
+                            <span>-</span>
+                            <input type="tel" id="phoneNumber3" maxlength="4" oninput="formatPhoneNumber()">
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+                        <p>사업장 E-Mail</p>
+                        <div class="em fl_nw">
+
+                            <input type="text">
+                            <span>@</span>
+                            <input type="text" type="email" id="customEmail" name="customEmail" style="display: none;">
+                            <select id="emailSelect" name="emailSelect" onchange="toggleCustomEmail()">
+                                <option value="select">선택</option>
+                                <option value="naver">naver.com</option>
+                                <option value="gmail">gmail.com</option>
+                                <option value="daum">daum.net</option>
+                                <option value="nate">nate.com</option>
+                                <option value="custom">직접 입력</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                    <script>
+                        function toggleCustomEmail() {
+                            var emailSelect = document.getElementById("emailSelect");
+                            var customEmailinput = document.getElementById("customEmail");
+
+                            if (emailSelect.value === "custom") {
+                                customEmailinput.style.display = "inline"; // 직접 입력란 보이기
+                                customEmailinput.required = true; // 필수 입력으로 설정
+                            } else {
+                                customEmailinput.style.display = "none"; // 직접 입력란 숨기기
+                                customEmailinput.required = false; // 필수 입력 해제
+                            }
+                        }
+                    </script>
+                    <div class="cl cl100">
+                        <p>사업장주소</p>
+                        <div class="cl_box">
+                            <div>
+                                <span>우편번호</span>
+                                <input type="text">
+                                <div class="f_ad_btn">
+                                    우편번호 검색<i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <span>도로명주소</span>
+                                <input type="text" disabled>
+                                <input type="text">
+
+                            </div>
+                            <div>
+                                <span>지번주소</span>
+                                <input type="text" disabled>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <small><i class="fa-solid fa-circle-exclamation"></i>사업장 주소지는 사업자등록증, 법인 등기부 등본상의 본사 주소지
+                                    입력</small>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+                        <p>개인신용정보 복구신청</p>
+                        <div>
+                            <div class="f_ad_btn">
+                                복구신청</i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        function formatPhoneNumber() {
+                            var phoneNumber1 = document.getElementById("phoneNumber1").value;
+                            var phoneNumber2 = document.getElementById("phoneNumber2").value;
+                            var phoneNumber3 = document.getElementById("phoneNumber3").value;
+
+                            // 각 입력란의 값이 숫자인지 확인
+                            if (!(/^\d*$/.test(phoneNumber1))) {
+                                document.getElementById("phoneNumber1").value = phoneNumber1.slice(0, -1);
+                            }
+                            if (!(/^\d*$/.test(phoneNumber2))) {
+                                document.getElementById("phoneNumber2").value = phoneNumber2.slice(0, -1);
+                            }
+                            if (!(/^\d*$/.test(phoneNumber3))) {
+                                document.getElementById("phoneNumber3").value = phoneNumber3.slice(0, -1);
+                            }
+                        }
+                    </script>
+
+                </div>
+            </div>
+            <script>
+                function toggleCustomEmail() {
+                    var emailSelect = document.getElementById("emailSelect");
+                    var customEmailinput = document.getElementById("customEmail");
+
+                    if (emailSelect.value === "custom") {
+                        customEmailinput.style.display = "inline"; // 직접 입력란 보이기
+                        customEmailinput.required = true; // 필수 입력으로 설정
+                    } else {
+                        customEmailinput.style.display = "none"; // 직접 입력란 숨기기
+                        customEmailinput.required = false; // 필수 입력 해제
+                    }
+                }
+            </script>
+
+            <div class="acodian_01">
+                <div class="sr_title">대표자 정보<p><i class="fa-solid fa-chevron-down"></i></p>
+                </div>
+                <div class="sr_box">
+                    <div class="cl">
+
+                        <p>대표자명</p>
+                        <div>
+                            <input type="text">
+                        </div>
+
+
+                    </div>
+                    <div class="cl">
+                        <p>대표자 주민등록번호</p>
+                        <div>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+
+                        <p>생년월일</p>
+                        <div>
+                            <input type="date">
+                        </div>
+
+
+
+                    </div>
+                    <div class="cl cl100">
+                        <p>대표자 휴대폰</p>
+                        <div class="tel fl_nw">
+                            <input type="tel" id="phoneNumber1" maxlength="3" oninput="formatPhoneNumber()">
+                            <span>-</span>
+                            <input type="tel" id="phoneNumber2" maxlength="4" oninput="formatPhoneNumber()">
+                            <span>-</span>
+                            <input type="tel" id="phoneNumber3" maxlength="4" oninput="formatPhoneNumber()">
+                        </div>
+                    </div>
+                    <div class="cl cl100">
+                        <p>대표자 E-Mail</p>
+                        <div class="em fl_nw">
+
+                            <input type="text">
+                            <span>@</span>
+                            <input type="text" type="email" id="customEmail" name="customEmail" style="display: none;">
+                            <select id="emailSelect" name="emailSelect" onchange="toggleCustomEmail()">
+                                <option value="select">선택</option>
+                                <option value="naver">naver.com</option>
+                                <option value="gmail">gmail.com</option>
+                                <option value="daum">daum.net</option>
+                                <option value="nate">nate.com</option>
+                                <option value="custom">직접 입력</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <script>
+                        function formatPhoneNumber() {
+                            var phoneNumber1 = document.getElementById("phoneNumber1").value;
+                            var phoneNumber2 = document.getElementById("phoneNumber2").value;
+                            var phoneNumber3 = document.getElementById("phoneNumber3").value;
+                            // 각 입력란의 값이 숫자인지 확인
+                            if (!(/^\d*$/.test(phoneNumber1))) {
+                                document.getElementById("phoneNumber1").value = phoneNumber1.slice(0, -1);
+                            }
+                            if (!(/^\d*$/.test(phoneNumber2))) {
+                                document.getElementById("phoneNumber2").value = phoneNumber2.slice(0, -1);
+                            }
+                            if (!(/^\d*$/.test(phoneNumber3))) {
+                                document.getElementById("phoneNumber3").value = phoneNumber3.slice(0, -1);
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="acodian_01">
+                <div class="sr_title">영업점 및 담당자<p><i class="fa-solid fa-chevron-down"></i></p>
+                </div>
+                <div class="sr_box">
+                    <div class="cl">
+
+                        <p>영업점 및 담당자</p>
+                        <div>
+                            <input type="text" disabled>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="btn_wrap">
+
+                <div>
+                    <div class="btn_content">비밀번호 변경</div>
+                    <div class="btn_content bgc02">수정취소</div>
+                    <div class="btn_content bgc01">저장하기</div>
+                </div>
+                <div>
+                    <div class="btn_content bgc03">회원탈퇴</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+<script>
+    const togglingBtns = document.querySelectorAll('.sr_title');
+
+    togglingBtns.forEach(function (btns) {
+        btns.addEventListener("click", function () {
+            btns.parentElement.classList.toggle('sr_active_dn');
+
+        });
+    });
+
+    function formatBusinessRegistrationNumber(input) {
+        // 입력된 값에서 숫자만 추출
+        var cleaned = input.value.replace(/\D/g, '');
+
+        // 사업자 등록번호 형식에 맞게 "-" 삽입
+        var formatted = '';
+        for (var i = 0; i < cleaned.length; i++) {
+            if (i === 3 || i === 5) {
+                formatted += '-';
+            }
+            formatted += cleaned[i];
+        }
+
+        // 삽입된 "-"가 포함된 형식으로 업데이트
+        input.value = formatted;
+    }
+
+    function formatCorporateNumber(input) {
+        // 입력된 값에서 숫자만 추출
+        var cleaned = input.value.replace(/\D/g, '');
+
+        // 법인번호 형식에 맞게 "-" 삽입
+        var formatted = '';
+        for (var i = 0; i < cleaned.length; i++) {
+            if (i === 6) {
+                formatted += '-';
+            }
+            formatted += cleaned[i];
+        }
+
+        // 삽입된 "-"가 포함된 형식으로 업데이트
+        input.value = formatted;
+    }
+
+
+</script>
+
+</html>
