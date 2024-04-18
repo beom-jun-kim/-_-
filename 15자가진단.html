@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <style>
+    #self_test_wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+    } 
+    .usage_guide {
+      margin: 30px 0;
+    }
+    .usage_guide_title {
+      display: flex;
+      align-items: center;
+      color: rgb(4 125 150);
+    }
+    .usage_guide_title h3 {
+      margin-left: 5px;
+    }
+    .self_test_table {
+        width: 100%;
+    }
+    .self_test_table th {
+        background: #F6FBFF;
+    }
+    .self_test_table th,
+    .self_test_table td
+     {
+        border: 1px solid #c5c5c5;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .self_test_table tbody tr td:nth-child(2) {
+        text-align: left;
+        padding-left: 5px;
+    }
+    .test_complete {
+        text-align: right;
+        margin-top: 20px;
+    }
+    .test_complete button {
+        border: none;
+        padding: 10px 20px;
+        color: #eee;
+        cursor: pointer;
+    }
+    .test_complete button:first-child {
+        background: #909090;
+    }
+    .test_complete button:last-child {
+        background: rgb(4 125 150);
+    }
+  </style>
+  <body>
+    <section id="self_test_wrap">
+      <div class="usage_guide">
+        <div class="usage_guide_title">
+          <h3>화면 이용안내</h3>
+        </div>
+        <table class="self_test_table">
+            <thead>
+                <tr>
+                    <th>항복</th>
+                    <th>문항</th>
+                    <th>전혀 그렇지<br/>않다</th>
+                    <th>그렇지<br/>않다</th>
+                    <th>보통이다</th>
+                    <th>그렇다</th>
+                    <th>매우<br/>그렇다</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>경영비전 및 경영방침</td>
+                    <td>1) 경영자는 구체적인 비전을 선포하고 구성원과 공유하고 있다</td>
+                    <td>
+                        <input type="radio" name="self_test_check01" id="self_test_check01">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check01" id="self_test_check01">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check01" id="self_test_check01">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check01" id="self_test_check01">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check01" id="self_test_check01">
+                    </td>
+                </tr>
+                <tr>
+                    <td>중장기 전략수립</td>
+                    <td>2) 고객과 시장분석을 반영한 중장기 전략이 정기적으로 수립되고 있다</td>
+                    <td>
+                        <input type="radio" name="self_test_check02" id="self_test_check02">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check02" id="self_test_check02">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check02" id="self_test_check02">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check02" id="self_test_check02">
+                    </td>
+                    <td>
+                        <input type="radio" name="self_test_check02" id="self_test_check02">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="test_complete">
+            <button>취소</button>
+            <button>평가완료</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
