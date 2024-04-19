@@ -948,13 +948,14 @@ table {
 }
 
 .form-group {
-  margin-bottom: 20px;
+    margin-top: 2rem;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
 }
+.form-group label input{width: 15px;}
 
 .form-group input {
   width: 100%;
@@ -1795,11 +1796,11 @@ table {
 #app{background: #f5f5f7;}
 body{background: #f5f5f7;}
 
-.sp_wrap{min-height: calc(100vh - 440px);margin: 0rem auto;padding-top: 88px;}
+.sp_wrap{min-height: calc(100vh - 440px);margin: 0rem auto;padding: 88px 1rem 0;}
 .sp_wrap .sp_container{max-width: 1400px;margin: 3rem auto 5rem;background: #fff;border-radius: .75rem;padding: 2rem 3rem;/* min-height: 50vh; */}
 .sp_wrap .sp_container .table{background: #fff;}
-.sp_wrap .sp_container button {border: 0px;color: white;border: 1px solid #eaeaea;border-radius: .25rem;padding: .5rem 1.125rem;font-size: .75rem;white-space: nowrap;display: flex;justify-content: center;align-items: center;}
-.sp_wrap .sp_container button:first-child{margin-left:0px}
+.sp_wrap .sp_container button {border: 0px;color: white;border: 1px solid #eaeaea;border-radius: .25rem;padding: .5rem 1.125rem;font-size: .75rem;white-space: nowrap;margin: 0 auto !important;display: flex;justify-content: center;align-items: center;}
+.sp_wrap .sp_container button:first-child{margin-left:0px;}
 .sp_wrap .sp_container > h6{
     text-align: center;
     font-size: 1.5rem;
@@ -2911,3 +2912,217 @@ flex: 1 1 auto;
 .bgc01{background: #031634; color: #fff;}
 .bgc02{background: #036564; color: #fff;}
 .bgc03{background: #333; color: #eaeaea;}
+
+
+/* 14 컨설팅절차안내 */
+#usage_guide_wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.usage_guide {
+  margin: 30px 0;
+}
+.usage_guide_title {
+  display: flex;
+  align-items: center;
+  color: rgb(4 125 150);
+}
+.usage_guide_title h3 {
+  margin-left: 5px;
+}
+.usage_guide_title svg {
+  transform: scaleX(-1);
+}
+.usage_guide_exp {
+  /* padding: 8px 20px; */
+  border-top: 3px solid rgb(4 125 150);
+}
+.usage_guide_exp ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.usage_guide_exp ul li {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+.usage_guide_exp ul li:first-child {
+}
+.usage_guide_exp ul li:last-child {
+}
+.consultant_li_title_box {
+  /* padding: 10px 20px; */
+  word-break: keep-all;
+}
+.usage_guide_btn {
+  text-align: center;
+  margin: 30px;
+}
+.usage_guide_btn button {
+  background: rgb(199, 0, 0);
+  padding: 10px 23px;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+}
+.red_text {
+  color: rgb(199, 0, 0);
+}
+.charge_usage_guide {
+  width: 100%;
+  text-align: center;
+}
+.charge_usage_guide thead {
+    background: #F6FBFF;
+}
+.charge_usage_guide th,
+.charge_usage_guide td {
+  border: 1px solid #ddd;
+}
+.charge_usage_guide ul {
+    list-style: disc;
+    list-style-position: inside;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.charge_usage_guide ul li::marker {
+    color:rgb(4 125 150);
+}
+
+
+
+/* 15 자가진단 */
+#self_test_wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+} 
+.usage_guide {
+  margin: 30px 0;
+}
+.usage_guide_title {
+  display: flex;
+  align-items: center;
+  color: rgb(4 125 150);
+}
+.usage_guide_title h3 {
+  margin-left: 5px;
+}
+.self_test_table {
+    width: 100%;
+}
+.self_test_table th {
+    background: #F6FBFF;
+}
+.self_test_table th,
+.self_test_table td
+ {
+    border: 1px solid #c5c5c5;
+    text-align: center;
+    padding: 10px 0;
+}
+.self_test_table tbody tr td:nth-child(2) {
+    text-align: left;
+    padding-left: 5px;
+}
+.test_complete {
+    text-align: right;
+    margin-top: 20px;
+}
+.test_complete button {
+    border: none;
+    padding: 10px 20px;
+    color: #eee;
+    cursor: pointer;
+}
+.test_complete button:first-child {
+    background: #909090;
+}
+.test_complete button:last-child {
+    background: rgb(4 125 150);
+}
+
+
+/* ///17이용약관 */
+
+.Terms{word-break: keep-all;white-space:pre-line;}
+.form-group {
+  margin-bottom: 1rem;
+  display: flex
+}
+
+.form-check-input {
+  margin-right: 0.5rem;
+}
+
+.form-check-label {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.form-check-input:checked + .form-check-label::before {
+  content: '\2714';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  line-height: 1em;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0.25em;
+  margin-right: 0.5rem;
+}
+
+
+/* 14 컨설팅 절차안내 */
+.usage_guide p{}
+
+.usage_guide_exp {
+  margin-bottom: 20px;
+}
+
+.usage_guide_exp ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.usage_guide_exp li {
+  margin-top: 1.25rem;
+}
+
+.consultant_li_title_box {
+  margin-bottom: 10px;
+}
+
+.consultant_li_title h4 {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.consultant_li_exp p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  white-space: pre-line;
+}
+
+.red_text {
+  color: red;
+}
+
+.usage_guide_btn button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.usage_guide_btn button:hover {
+  background-color: #0056b3;
+}
